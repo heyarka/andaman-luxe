@@ -79,7 +79,7 @@ const PackageDetailPage = () => {
                 <p className="text-sm text-muted-foreground">Starting from</p>
                 <p className="text-3xl md:text-4xl font-bold text-accent">{pkg.price}</p>
                 <p className="text-sm text-muted-foreground">per person</p>
-                <button onClick={() => navigate("/contact")} className="mt-3 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:brightness-110 transition-all text-sm">
+                <button onClick={() => navigate("/book")} className="mt-3 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:brightness-110 transition-all text-sm">
                   Book This Package
                 </button>
               </div>
