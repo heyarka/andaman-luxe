@@ -30,7 +30,7 @@ const Navbar = () => {
               key={item.path}
               to={item.path}
               className={`text-sm font-medium transition-colors hover:text-accent ${
-                location.pathname === item.path ? "text-accent" : "text-muted-foreground"
+                location.pathname === item.path ? "text-accent" : "text-foreground/70"
               }`}
             >
               {item.label}

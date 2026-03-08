@@ -43,7 +43,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+          className="text-lg md:text-xl text-foreground/70 max-w-2xl mx-auto mb-12 drop-shadow-sm"
         >
           Experience the untouched beauty of the Andaman Islands with our curated
           luxury packages and bespoke itineraries.
