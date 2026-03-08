@@ -106,16 +106,19 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
       {/* Package Cards - Horizontal scroll on mobile */}
       <div className="mb-6 md:mb-12">
         <HorizontalScroll className="md:grid-cols-3">
-          {packages.map((pkg, i) => (
+          {packages.map((pkg, i) => {
+            const isFocused = focusedIdx === i;
+            return (
             <motion.div
               key={pkg.name}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4, delay: i * 0.15 }}
-              className={`rounded-xl md:rounded-2xl overflow-hidden shrink-0 w-[75vw] md:w-auto snap-center ${
-                pkg.recommended
-                  ? "border-2 border-accent shadow-lg shadow-accent/10"
-                  : "border border-foreground/10"
+              animate={{ opacity: 1, y: 0, scale: isFocused ? 1 : 0.92 }}
+              transition={{ duration: 0.4, delay: i * 0.15, scale: { duration: 0.3 } }}
+              onClick={() => setFocusedIdx(i)}
+              className={`rounded-xl md:rounded-2xl overflow-hidden shrink-0 w-[75vw] md:w-auto snap-center cursor-pointer transition-all duration-300 ${
+                isFocused
+                  ? "border-2 border-accent shadow-lg shadow-accent/10 z-10"
+                  : "border border-foreground/10 opacity-70"
               } bg-card`}
             >
               {pkg.recommended && (
