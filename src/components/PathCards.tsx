@@ -75,7 +75,7 @@ const PathCards = () => {
             ))}
           </div>
           <a
-            href="/contact"
+            href="/book"
             className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground btn-primary-glow transition-all hover:brightness-110"
           >
             Find Your Perfect Trip

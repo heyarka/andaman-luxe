@@ -129,7 +129,7 @@ const Explore = () => {
             Now that you've explored what Andaman has to offer, let's find the perfect package tailored just for you
           </p>
           <a
-            href="/contact"
+            href="/book"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground btn-primary-glow transition-all hover:brightness-110"
           >
             Find Your Perfect Trip
