@@ -13,6 +13,7 @@ import CustomizePackage from "./pages/CustomizePackage";
 import PackageDetailPage from "./pages/PackageDetailPage";
 import WhyChooseUs from "./pages/WhyChooseUs";
 import CalculatorPage from "./pages/CalculatorPage";
+import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -34,6 +35,7 @@ const App = () => (
           <Route path="/package/:slug" element={<PackageDetailPage />} />
           <Route path="/why-choose-us" element={<WhyChooseUs />} />
           <Route path="/calculator" element={<CalculatorPage />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
