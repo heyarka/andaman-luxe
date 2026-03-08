@@ -49,6 +49,16 @@
     @apply border-border;
   }
 
+  html {
+    font-size: 17px;
+  }
+
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+
   body {
     @apply bg-background text-foreground;
     font-family: var(--font-body);
