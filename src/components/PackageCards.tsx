@@ -20,27 +20,27 @@ interface PackageCardsProps {
 }
 
 const honeymoonPackages = [
-  { slug: "romantic-bliss", name: "Romantic Bliss", duration: "5D/4N", islands: "2 Islands", priceUSD: "$2,899", priceINR: "₹24,999", image: honeymoon1, recommended: false, features: ["Private beach villa with ocean view", "Candlelit dinner on the beach", "Couples spa & massage", "Sunset cruise for two"] },
-  { slug: "paradise-romance", name: "Paradise Romance", duration: "7D/6N", islands: "3 Islands", priceUSD: "$4,999", priceINR: "₹42,999", image: honeymoon2, recommended: true, features: ["Luxury overwater bungalow", "Private yacht day tour", "Professional couple photoshoot", "Premium dining experiences", "Scuba diving for two"] },
-  { slug: "ultimate-escape", name: "Ultimate Escape", duration: "10D/9N", islands: "4 Islands", priceUSD: "$7,999", priceINR: "₹67,999", image: honeymoon3, recommended: false, features: ["Presidential villa suite", "Helicopter island hopping", "Private chef & butler", "Unlimited spa treatments", "Exclusive beach access"] },
+  { slug: "romantic-radhanagar-retreat", name: "Romantic Radhanagar Retreat", duration: "4D/3N", islands: "2 Islands", priceUSD: "$275", priceINR: "₹22,999", image: honeymoon1, recommended: false, features: ["Beachfront cottage stay", "Candlelit dinner at Radhanagar", "Couples spa at resort", "Sunset cruise at Chidiya Tapu"] },
+  { slug: "island-romance-getaway", name: "Island Romance Getaway", duration: "6D/5N", islands: "3 Islands", priceUSD: "$469", priceINR: "₹38,999", image: honeymoon2, recommended: true, features: ["Private yacht sunset cruise", "Bioluminescent kayaking", "Couples photoshoot at Neil Island", "Luxury resort stay"] },
+  { slug: "luxury-andaman-honeymoon", name: "Luxury Andaman Honeymoon", duration: "8D/7N", islands: "4 Islands", priceUSD: "$779", priceINR: "₹64,999", image: honeymoon3, recommended: false, features: ["Private yacht day trip", "Seaplane scenic flight", "Overwater villa experience", "Dedicated butler service"] },
 ];
 
 const familyPackages = [
-  { slug: "family-fun", name: "Family Fun", duration: "5D/4N", islands: "2 Islands", priceUSD: "$1,999", priceINR: "₹16,999", image: honeymoon1, recommended: false, features: ["Family-friendly resort", "Kids activity programs", "Glass-bottom boat ride", "Beach picnic experience"] },
-  { slug: "island-explorer", name: "Island Explorer", duration: "7D/6N", islands: "3 Islands", priceUSD: "$3,499", priceINR: "₹29,999", image: honeymoon2, recommended: true, features: ["Multi-island hopping tour", "Snorkeling for all ages", "Cultural village visits", "Mangrove kayaking", "Underwater sea walk"] },
-  { slug: "grand-family", name: "Grand Family", duration: "10D/9N", islands: "4 Islands", priceUSD: "$5,999", priceINR: "₹49,999", image: honeymoon3, recommended: false, features: ["Premium family suite", "Private island day trip", "Adventure sports package", "Photography session", "All-inclusive dining"] },
+  { slug: "andaman-family-explorer", name: "Andaman Family Explorer", duration: "4D/3N", islands: "2 Islands", priceUSD: "$229", priceINR: "₹18,999", image: honeymoon1, recommended: false, features: ["Family-friendly resort with pool", "Glass-bottom boat at North Bay", "Cellular Jail heritage tour", "Radhanagar Beach day trip"] },
+  { slug: "island-hopping-family-fun", name: "Island Hopping Family Fun", duration: "6D/5N", islands: "3 Islands", priceUSD: "$399", priceINR: "₹32,999", image: honeymoon2, recommended: true, features: ["Snorkeling for all ages", "Baratang Limestone Cave trek", "Bicycle tour of Neil Island", "Bioluminescent kayaking"] },
+  { slug: "grand-andaman-family-vacation", name: "Grand Andaman Family Vacation", duration: "8D/7N", islands: "4 Islands", priceUSD: "$659", priceINR: "₹54,999", image: honeymoon3, recommended: false, features: ["Baratang Limestone Caves trip", "Private boat to secluded beach", "Intro scuba for teens", "All-inclusive dining"] },
 ];
 
 const adventurePackages = [
   { slug: "thrill-seeker", name: "Andaman Thrill-Seeker Expedition", duration: "6D/5N", islands: "3 Islands", priceUSD: "$420", priceINR: "₹34,999", image: honeymoon1, recommended: true, features: ["Introductory Scuba Dive", "Night Kayaking in Mangroves", "Elephant Beach Jungle Trek", "Baratang Limestone Caves"] },
-  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", priceUSD: "$2,999", priceINR: "₹24,999", image: honeymoon2, recommended: false, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
-  { slug: "ultimate-explorer", name: "Ultimate Explorer", duration: "9D/8N", islands: "5 Islands", priceUSD: "$5,499", priceINR: "₹45,999", image: honeymoon3, recommended: false, features: ["Helicopter tour", "Private speedboat", "Underwater photography", "Jungle survival camp", "Full adventure bundle"] },
+  { slug: "extreme-andaman-challenge", name: "Extreme Andaman Challenge", duration: "8D/7N", islands: "4 Islands", priceUSD: "$639", priceINR: "₹52,999", image: honeymoon2, recommended: false, features: ["PADI Open Water Certification", "Mud Volcano trek at Baratang", "Mangrove survival kayaking", "Jungle camping on Havelock"] },
+  { slug: "ultimate-andaman-explorer", name: "Ultimate Andaman Explorer", duration: "10D/9N", islands: "5 Islands", priceUSD: "$899", priceINR: "₹74,999", image: honeymoon3, recommended: false, features: ["Helicopter scenic flight", "Barren Island volcano cruise", "Advanced scuba at Cinque Island", "Live-aboard boat experience"] },
 ];
 
 const seniorPackages = [
-  { slug: "serene-getaway", name: "Serene Getaway", duration: "5D/4N", islands: "2 Islands", priceUSD: "$2,199", priceINR: "₹18,999", image: honeymoon1, recommended: false, features: ["Comfortable resort stay", "Guided heritage walks", "Scenic boat cruise", "Wellness spa sessions"] },
-  { slug: "golden-retreat", name: "Golden Retreat", duration: "7D/6N", islands: "3 Islands", priceUSD: "$3,799", priceINR: "₹31,999", image: honeymoon2, recommended: true, features: ["Premium accessible rooms", "Private car transfers", "Cultural excursions", "Gourmet dining", "Sunset photography tour"] },
-  { slug: "platinum-leisure", name: "Platinum Leisure", duration: "10D/9N", islands: "4 Islands", priceUSD: "$6,499", priceINR: "₹54,999", image: honeymoon3, recommended: false, features: ["Luxury suite with sea view", "Personal travel assistant", "Daily wellness program", "Exclusive island tour", "All meals included"] },
+  { slug: "peaceful-andaman-escape", name: "Peaceful Andaman Escape", duration: "5D/4N", islands: "2 Islands", priceUSD: "$299", priceINR: "₹24,999", image: honeymoon1, recommended: false, features: ["Accessible heritage tours", "Glass-bottom boat coral viewing", "Ayurvedic spa session", "Gentle Radhanagar Beach walk"] },
+  { slug: "golden-andaman-retreat", name: "Golden Andaman Retreat", duration: "7D/6N", islands: "3 Islands", priceUSD: "$519", priceINR: "₹42,999", image: honeymoon2, recommended: true, features: ["Private AC car throughout", "Guided bird-watching walk", "Cooking class experience", "Sunset photography tour"] },
+  { slug: "premium-andaman-leisure", name: "Premium Andaman Leisure", duration: "9D/8N", islands: "4 Islands", priceUSD: "$759", priceINR: "₹62,999", image: honeymoon3, recommended: false, features: ["Personal travel assistant", "Daily wellness program", "Ross Island heritage walk", "Sunset cruise experience"] },
 ];
 
 function getPackages(tripType: string) {
@@ -224,7 +224,7 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
                   onClick={handleWhatsApp}
                   className="flex flex-col items-center gap-2 rounded-xl border border-foreground/10 py-4 px-2 hover:bg-accent/5 hover:border-accent/30 transition-all"
                 >
-                  <MessageCircle className="h-5 w-5 text-green-500" />
+                  <MessageCircle className="h-5 w-5 text-accent" />
                   <span className="text-xs font-semibold text-foreground">WhatsApp</span>
                 </button>
                 <button
@@ -238,7 +238,7 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
                   onClick={handleEmail}
                   className="flex flex-col items-center gap-2 rounded-xl border border-foreground/10 py-4 px-2 hover:bg-accent/5 hover:border-accent/30 transition-all"
                 >
-                  <Mail className="h-5 w-5 text-primary" />
+                  <Mail className="h-5 w-5 text-accent" />
                   <span className="text-xs font-semibold text-foreground">Email</span>
                 </button>
               </div>
