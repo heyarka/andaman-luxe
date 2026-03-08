@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 import destinationsImg from "@/assets/destinations.jpg";
 import waterSportsImg from "@/assets/water-sports.jpg";
 import ferryImg from "@/assets/ferry-services.jpg";
@@ -69,7 +70,7 @@ const Explore = () => {
       </section>
 
       {/* Category Cards */}
-      <section className="px-4 md:px-6 pb-16 md:pb-24">
+      <section className="px-4 md:px-6 pb-10 md:pb-16">
         <div className="container mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
           {categories.map((cat, i) => (
             <motion.div
@@ -115,8 +116,10 @@ const Explore = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* CTA Section */}
-      <section className="px-4 md:px-6 pb-10 md:pb-24">
+      <section className="px-4 md:px-6 pb-10 md:pb-16">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +143,9 @@ const Explore = () => {
         </motion.div>
       </section>
 
+      <SectionDivider />
       <ReviewsSection />
+      <SectionDivider />
       <Footer />
     </div>
   );
