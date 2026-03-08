@@ -23,50 +23,9 @@ const familyPackages = [
 ];
 
 const adventurePackages = [
-  {
-    name: "Thrill Seeker",
-    duration: "4D/3N",
-    islands: "2 Islands",
-    price: "$1,499",
-    image: honeymoon1,
-    recommended: false,
-    features: [
-      "Scuba diving sessions",
-      "Jet ski & parasailing",
-      "Night beach bonfire",
-      "Trekking expedition",
-    ],
-  },
-  {
-    name: "Epic Adventure",
-    duration: "6D/5N",
-    islands: "3 Islands",
-    price: "$2,999",
-    image: honeymoon2,
-    recommended: true,
-    features: [
-      "Deep sea diving certification",
-      "Island camping experience",
-      "Kayaking & snorkeling",
-      "Fishing trip",
-      "Volcano mud trek",
-    ],
-  },
-  {
-    name: "Ultimate Explorer",
-    duration: "9D/8N",
-    islands: "5 Islands",
-    price: "$5,499",
-    image: honeymoon3,
-    recommended: false,
-    features: [
-      "Helicopter tour",
-      "Private speedboat",
-      "Underwater photography",
-      "Jungle survival camp",
-      "Full adventure bundle",
-    ],
-  },
+  { slug: "thrill-seeker", name: "Thrill Seeker", duration: "4D/3N", islands: "2 Islands", price: "$1,499", image: honeymoon1, recommended: false, features: ["Scuba diving sessions", "Jet ski & parasailing", "Night beach bonfire", "Trekking expedition"] },
+  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", price: "$2,999", image: honeymoon2, recommended: true, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
+  { slug: "ultimate-explorer", name: "Ultimate Explorer", duration: "9D/8N", islands: "5 Islands", price: "$5,499", image: honeymoon3, recommended: false, features: ["Helicopter tour", "Private speedboat", "Underwater photography", "Jungle survival camp", "Full adventure bundle"] },
 ];
 
 const seniorPackages = [
