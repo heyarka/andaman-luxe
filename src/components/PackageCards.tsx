@@ -66,7 +66,8 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
 
   const handleGoToContact = () => {
     if (selectedPkg) {
-      navigate(`/contact?package=${encodeURIComponent(selectedPkg.name)}&duration=${encodeURIComponent(selectedPkg.duration)}&price=${encodeURIComponent(selectedPkg.price)}`);
+      const price = getPrice(selectedPkg);
+      navigate(`/contact?package=${encodeURIComponent(selectedPkg.name)}&duration=${encodeURIComponent(selectedPkg.duration)}&price=${encodeURIComponent(price)}`);
     }
   };
 
