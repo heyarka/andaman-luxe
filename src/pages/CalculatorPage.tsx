@@ -280,10 +280,11 @@ const CalculatorPage = () => {
               {/* Tab: Extras */}
               {activeTab === 3 && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }}>
+                  {/* Add-ons */}
                   <h3 className="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
                     <span className="w-1 h-6 bg-accent rounded-full" /> Add-ons & extras
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-4 mb-10">
                     {extras.map((e, i) => (
                       <button
                         key={e.name}
@@ -298,6 +299,76 @@ const CalculatorPage = () => {
                         <p className="text-xs text-accent font-semibold mt-1">₹{e.cost.toLocaleString()}/person</p>
                       </button>
                     ))}
+                  </div>
+
+                  {/* Travel Essentials */}
+                  <h3 className="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-accent rounded-full" /> Travel Essentials
+                  </h3>
+                  <div className="space-y-4 mb-10">
+                    <button
+                      onClick={() => setIncludeFlights(!includeFlights)}
+                      className={`w-full glass-card rounded-xl p-5 flex items-center justify-between transition-all ${
+                        includeFlights ? "border-accent bg-accent/5" : "hover:border-accent/30"
+                      }`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <Plane className="h-6 w-6 text-muted-foreground" />
+                        <div className="text-left">
+                          <h4 className="font-bold text-foreground">Include Flight Estimates</h4>
+                          <p className="text-xs text-muted-foreground">Approx. ₹12,000/person round-trip</p>
+                        </div>
+                      </div>
+                      <div className={`h-7 w-12 rounded-full transition-all flex items-center px-0.5 ${includeFlights ? "bg-accent" : "bg-muted"}`}>
+                        <div className={`h-6 w-6 rounded-full bg-background shadow transition-transform ${includeFlights ? "translate-x-5" : "translate-x-0"}`} />
+                      </div>
+                    </button>
+
+                    <button
+                      onClick={() => setIncludeInsurance(!includeInsurance)}
+                      className={`w-full glass-card rounded-xl p-5 flex items-center justify-between transition-all ${
+                        includeInsurance ? "border-accent bg-accent/5" : "hover:border-accent/30"
+                      }`}
+                    >
+                      <div className="flex items-center gap-4">
+                        <ShieldCheck className="h-6 w-6 text-muted-foreground" />
+                        <div className="text-left">
+                          <h4 className="font-bold text-foreground">Add Travel Insurance</h4>
+                          <p className="text-xs text-muted-foreground">₹500/person - Recommended</p>
+                        </div>
+                      </div>
+                      <div className={`h-7 w-12 rounded-full transition-all flex items-center px-0.5 ${includeInsurance ? "bg-accent" : "bg-muted"}`}>
+                        <div className={`h-6 w-6 rounded-full bg-background shadow transition-transform ${includeInsurance ? "translate-x-5" : "translate-x-0"}`} />
+                      </div>
+                    </button>
+                  </div>
+
+                  {/* Miscellaneous Budget */}
+                  <h3 className="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
+                    <span className="w-1 h-6 bg-accent rounded-full" /> Miscellaneous Budget
+                  </h3>
+                  <div className="glass-card rounded-xl p-5">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center gap-3">
+                        <ShoppingBag className="h-6 w-6 text-accent" />
+                        <h4 className="font-bold text-foreground">Extra Budget (Shopping, Tips, Snacks)</h4>
+                      </div>
+                      <span className="text-sm font-bold text-accent bg-accent/15 px-3 py-1 rounded-lg">{miscPercent}%</span>
+                    </div>
+                    <input
+                      type="range"
+                      min={0}
+                      max={20}
+                      step={1}
+                      value={miscPercent}
+                      onChange={(e) => setMiscPercent(Number(e.target.value))}
+                      className="w-full h-2 bg-muted rounded-full appearance-none cursor-pointer accent-accent"
+                    />
+                    <div className="flex justify-between text-xs text-muted-foreground mt-2">
+                      <span>0%</span>
+                      <span>10%</span>
+                      <span>20%</span>
+                    </div>
                   </div>
                 </motion.div>
               )}
