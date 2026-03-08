@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useSearchParams } from "react-router-dom";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Send } from "lucide-react";
 import { toast } from "@/hooks/use-toast";
@@ -7,7 +8,16 @@ import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
 
 const Contact = () => {
-  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", travelDates: "", message: "" });
+  const [searchParams] = useSearchParams();
+  const packageName = searchParams.get("package");
+  const packageDuration = searchParams.get("duration");
+  const packagePrice = searchParams.get("price");
+
+  const prefillMessage = packageName
+    ? `Hi, I'm interested in booking the "${packageName}" package (${packageDuration}, ${packagePrice}/person). Please get in touch with me to discuss further details.`
+    : "";
+
+  const [form, setForm] = useState({ firstName: "", lastName: "", email: "", phone: "", travelDates: "", message: prefillMessage });
   const [sending, setSending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
