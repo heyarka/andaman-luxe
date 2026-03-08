@@ -6,6 +6,7 @@ import { toast } from "@/hooks/use-toast";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 
 const Contact = () => {
   const [searchParams] = useSearchParams();
@@ -82,146 +83,66 @@ const Contact = () => {
       </section>
 
       {/* Content */}
-      <section className="px-6 pb-24">
+      <section className="px-6 pb-12 md:pb-20">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12">
-            {/* Left: Info */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.1 }}
-            >
+            <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
               <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
                 Let's Create Magic Together
               </h2>
               <p className="text-muted-foreground text-sm leading-relaxed mb-10">
                 Whether you're planning a romantic getaway, family vacation, or adventure trip, our team will craft a bespoke experience tailored to your desires.
               </p>
-
               <div className="space-y-8">
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 shrink-0">
-                    <Phone className="h-5 w-5 text-accent" />
+                {[
+                  { icon: Phone, title: "Phone", lines: ["+91 86373 27297"] },
+                  { icon: Mail, title: "Email", lines: ["contact@andamanluxe.com"] },
+                  { icon: MapPin, title: "Office", lines: ["Port Blair, Andaman & Nicobar Islands", "India - 744101"] },
+                ].map((item) => (
+                  <div key={item.title} className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 shrink-0">
+                      <item.icon className="h-5 w-5 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-display font-bold text-foreground mb-1">{item.title}</h4>
+                      {item.lines.map((line) => (
+                        <p key={line} className="text-sm text-muted-foreground">{line}</p>
+                      ))}
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-display font-bold text-foreground mb-1">Phone</h4>
-                    <p className="text-sm text-muted-foreground">+91 98765 43210</p>
-                    <p className="text-sm text-muted-foreground">+91 98765 43211</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 shrink-0">
-                    <Mail className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-foreground mb-1">Email</h4>
-                    <p className="text-sm text-muted-foreground">info@andamanluxe.com</p>
-                    <p className="text-sm text-muted-foreground">bookings@andamanluxe.com</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-accent/15 shrink-0">
-                    <MapPin className="h-5 w-5 text-accent" />
-                  </div>
-                  <div>
-                    <h4 className="font-display font-bold text-foreground mb-1">Office</h4>
-                    <p className="text-sm text-muted-foreground">Port Blair, Andaman & Nicobar Islands</p>
-                    <p className="text-sm text-muted-foreground">India - 744101</p>
-                  </div>
-                </div>
+                ))}
               </div>
             </motion.div>
 
-            {/* Right: Form */}
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 0.2 }}
-            >
+            <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.2 }}>
               <form onSubmit={handleSubmit} className="glass-card rounded-2xl p-6 md:p-8 space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-semibold text-foreground mb-1.5 block">First Name</label>
-                    <input
-                      name="firstName"
-                      value={form.firstName}
-                      onChange={handleChange}
-                      placeholder="John"
-                      maxLength={50}
-                      className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                    />
+                    <input name="firstName" value={form.firstName} onChange={handleChange} placeholder="John" maxLength={50} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors" />
                   </div>
                   <div>
                     <label className="text-sm font-semibold text-foreground mb-1.5 block">Last Name</label>
-                    <input
-                      name="lastName"
-                      value={form.lastName}
-                      onChange={handleChange}
-                      placeholder="Doe"
-                      maxLength={50}
-                      className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                    />
+                    <input name="lastName" value={form.lastName} onChange={handleChange} placeholder="Doe" maxLength={50} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors" />
                   </div>
                 </div>
-
                 <div>
                   <label className="text-sm font-semibold text-foreground mb-1.5 block">Email</label>
-                  <input
-                    name="email"
-                    type="email"
-                    value={form.email}
-                    onChange={handleChange}
-                    placeholder="john@example.com"
-                    maxLength={100}
-                    className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                  />
+                  <input name="email" type="email" value={form.email} onChange={handleChange} placeholder="john@example.com" maxLength={100} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors" />
                 </div>
-
                 <div>
                   <label className="text-sm font-semibold text-foreground mb-1.5 block">Phone</label>
-                  <input
-                    name="phone"
-                    type="tel"
-                    value={form.phone}
-                    onChange={handleChange}
-                    placeholder="+1 (555) 000-0000"
-                    maxLength={20}
-                    className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                  />
+                  <input name="phone" type="tel" value={form.phone} onChange={handleChange} placeholder="+1 (555) 000-0000" maxLength={20} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors" />
                 </div>
-
                 <div>
                   <label className="text-sm font-semibold text-foreground mb-1.5 block">Travel Dates</label>
-                  <input
-                    name="travelDates"
-                    value={form.travelDates}
-                    onChange={handleChange}
-                    placeholder="e.g., March 15-22, 2026"
-                    maxLength={50}
-                    className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors"
-                  />
+                  <input name="travelDates" value={form.travelDates} onChange={handleChange} placeholder="e.g., March 15-22, 2026" maxLength={50} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors" />
                 </div>
-
                 <div>
                   <label className="text-sm font-semibold text-foreground mb-1.5 block">Message</label>
-                  <textarea
-                    name="message"
-                    value={form.message}
-                    onChange={handleChange}
-                    placeholder="Tell us about your dream vacation..."
-                    maxLength={1000}
-                    rows={4}
-                    className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none"
-                  />
+                  <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your dream vacation..." maxLength={1000} rows={4} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none" />
                 </div>
-
-                <button
-                  type="submit"
-                  disabled={sending}
-                  className="w-full rounded-lg bg-accent text-accent-foreground py-3 text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2 disabled:opacity-50"
-                >
+                <button type="submit" disabled={sending} className="w-full rounded-lg bg-accent text-accent-foreground py-3 text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
                   <Send className="h-4 w-4" />
                   {sending ? "Sending..." : "Send Message"}
                 </button>
@@ -231,7 +152,9 @@ const Contact = () => {
         </div>
       </section>
 
+      <SectionDivider />
       <ReviewsSection />
+      <SectionDivider />
       <Footer />
     </div>
   );

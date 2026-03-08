@@ -3,6 +3,7 @@ import { Users, ShieldCheck, Star, Phone, MessageCircle, Sparkles, MapPin, Clock
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 import heroBeach from "@/assets/hero-beach.jpg";
 
 const reasons = [
@@ -38,7 +39,6 @@ const WhyChooseUs = () => {
       <section className="pt-20 md:pt-28 pb-12 md:pb-24 px-4 md:px-6">
         <div className="container mx-auto max-w-6xl">
           <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-center">
-            {/* Left: Image with overlay card */}
             <motion.div
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -52,7 +52,6 @@ const WhyChooseUs = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Floating card */}
               <div className="absolute bottom-3 left-3 right-3 md:bottom-6 md:left-6 md:right-6 glass-card rounded-lg md:rounded-xl p-3 md:p-5 flex items-center gap-3 md:gap-4">
                 <div className="flex h-8 w-8 md:h-12 md:w-12 items-center justify-center rounded-full bg-accent/20 shrink-0">
                   <Phone className="h-4 w-4 md:h-6 md:w-6 text-accent" />
@@ -64,7 +63,6 @@ const WhyChooseUs = () => {
               </div>
             </motion.div>
 
-            {/* Right: Content */}
             <motion.div
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
@@ -80,7 +78,6 @@ const WhyChooseUs = () => {
                 Memories
               </h1>
 
-              {/* Reasons */}
               <div className="space-y-3 md:space-y-8 mb-4 md:mb-10">
                 {reasons.map((r, i) => (
                   <motion.div
@@ -101,7 +98,6 @@ const WhyChooseUs = () => {
                 ))}
               </div>
 
-              {/* CTA Buttons */}
               <div className="flex flex-wrap items-center gap-2 md:gap-3">
                 <a
                   href="tel:+918637327297"
@@ -129,8 +125,10 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* Stats Section */}
-      <section className="py-10 md:py-20 px-4 md:px-6">
+      <section className="py-6 md:py-16 px-4 md:px-6">
         <div className="container mx-auto max-w-5xl">
           <div className="grid grid-cols-3 gap-3 md:gap-6">
             {stats.map((stat, i) => (
@@ -151,8 +149,10 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
+      <SectionDivider />
+
       {/* What Sets Us Apart */}
-      <section className="py-10 md:py-20 px-4 md:px-6">
+      <section className="py-6 md:py-16 px-4 md:px-6">
         <div className="container mx-auto max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -192,7 +192,9 @@ const WhyChooseUs = () => {
         </div>
       </section>
 
+      <SectionDivider />
       <ReviewsSection />
+      <SectionDivider />
       <Footer />
     </div>
   );
