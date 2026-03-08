@@ -76,7 +76,7 @@ const WhyChooseUs = () => {
               <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground leading-tight mb-2">
                 We Don't Just Plan Trips, We Craft
               </h1>
-              <h1 className="font-display text-4xl md:text-5xl font-bold text-accent italic mb-10">
+              <h1 className="font-display text-4xl md:text-5xl font-bold text-gradient-hero italic mb-10">
                 Memories
               </h1>
 
