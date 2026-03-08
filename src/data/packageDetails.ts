@@ -231,7 +231,7 @@ export const allPackageDetails: PackageDetail[] = [
     ],
     included: ["All ferry & private cab transfers", "5 nights 3-star accommodation", "Daily breakfast", "1 Introductory Scuba Dive", "Night Kayaking session", "All entry permits & taxes", "24/7 on-call local coordinator"],
     notIncluded: ["Flights to Port Blair", "Lunch & Dinner", "Personal watersports (jet ski, etc.)", "Travel insurance", "Anything not listed"],
-    accommodation: "3-Star Beachside Cottages",
+    accommodation: "4-Star Beachside Cottages",
     meals: "Breakfast Only",
     transfers: "Ferry + Private Cab",
     safety: "Fully Covered",
