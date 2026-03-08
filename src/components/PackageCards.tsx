@@ -126,7 +126,10 @@ const PackageCards = ({ tripType, onStartOver }: PackageCardsProps) => {
               >
                 Book This Package
               </button>
-              <button className="w-full rounded-lg py-3 text-sm font-semibold border border-foreground/10 text-foreground hover:bg-muted/50 transition-all">
+              <button
+                onClick={() => navigate(`/package/${pkg.slug}`)}
+                className="w-full rounded-lg py-3 text-sm font-semibold border border-foreground/10 text-foreground hover:bg-muted/50 transition-all"
+              >
                 View Details
               </button>
             </div>
