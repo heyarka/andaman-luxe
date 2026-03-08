@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Clock, MapPin, CheckCircle2, Star, RefreshCw } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 import honeymoon1 from "@/assets/honeymoon-1.jpg";
 import honeymoon2 from "@/assets/honeymoon-2.jpg";
 import honeymoon3 from "@/assets/honeymoon-3.jpg";
