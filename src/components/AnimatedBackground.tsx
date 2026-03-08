@@ -74,7 +74,7 @@ const AnimatedBackground = () => {
       // Scanning diagonal lines — more visible
       for (let i = 0; i < 5; i++) {
         const offset = (time * 100 + i * 350) % (canvas.width + canvas.height + 400) - 200;
-        const lineAlpha = 0.08 + Math.sin(time * 2 + i) * 0.04;
+        const lineAlpha = 0.04 + Math.sin(time * 2 + i) * 0.02;
         ctx.strokeStyle = `rgba(59, 130, 246, ${lineAlpha})`;
         ctx.lineWidth = 1.5;
         ctx.beginPath();
