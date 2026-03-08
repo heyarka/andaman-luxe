@@ -37,7 +37,7 @@ const Navbar = () => {
             </Link>
           ))}
           <Link
-            to="/contact"
+            to="/book"
             className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all btn-primary-glow hover:brightness-110"
           >
             Book Now
@@ -75,7 +75,7 @@ const Navbar = () => {
                 </Link>
               ))}
               <Link
-                to="/contact"
+                to="/book"
                 onClick={() => setMobileOpen(false)}
                 className="rounded-lg bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground text-center btn-primary-glow"
               >

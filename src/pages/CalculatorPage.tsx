@@ -453,7 +453,7 @@ const CalculatorPage = () => {
                   ))}
                 </div>
 
-                <button className="w-full rounded-lg bg-accent text-accent-foreground py-2 md:py-3 text-[10px] md:text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-1.5 md:gap-2">
+                <button onClick={() => window.location.href = '/book'} className="w-full rounded-lg bg-accent text-accent-foreground py-2 md:py-3 text-[10px] md:text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-1.5 md:gap-2">
                   <Sparkles className="h-3 w-3 md:h-4 md:w-4" /> Book Now & Finalize
                 </button>
               </motion.div>

@@ -222,7 +222,7 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
         <h3 className="font-display text-sm md:text-xl font-bold text-foreground mb-1 md:mb-2">Need Help Deciding?</h3>
         <p className="text-[10px] md:text-base text-muted-foreground mb-3 md:mb-6">Our travel experts are here to help you choose the perfect package</p>
         <div className="flex items-center justify-center gap-2 md:gap-4">
-          <button className="rounded-lg bg-accent text-accent-foreground px-4 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-semibold hover:brightness-110 transition-all">Talk to an Expert</button>
+          <button onClick={() => { const message = `Hi, I need help choosing the right Andaman package. Can you assist?`; window.location.href = `https://wa.me/918637327297?text=${encodeURIComponent(message)}`; }} className="rounded-lg bg-accent text-accent-foreground px-4 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-semibold hover:brightness-110 transition-all">Talk to an Expert</button>
           <button onClick={() => navigate("/customize")} className="rounded-lg border border-foreground/10 text-foreground px-4 py-2 md:px-8 md:py-3 text-[10px] md:text-sm font-semibold hover:bg-muted/50 transition-all">Customize</button>
         </div>
       </div>
