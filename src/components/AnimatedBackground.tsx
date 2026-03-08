@@ -25,7 +25,7 @@ const AnimatedBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       // Draw grid lines
-      ctx.strokeStyle = "rgba(59, 130, 246, 0.15)";
+      ctx.strokeStyle = "rgba(59, 130, 246, 0.08)";
       ctx.lineWidth = 0.5;
       const gridSize = 60;
 
