@@ -80,6 +80,13 @@
     background-clip: text;
   }
 
+  .text-gradient-hero {
+    background: linear-gradient(135deg, hsl(260, 80%, 60%), hsl(190, 100%, 55%), hsl(150, 100%, 55%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
   .hero-overlay {
     background: linear-gradient(
       180deg,
