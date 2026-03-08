@@ -298,7 +298,7 @@ const PackageCards = ({ tripType, onStartOver }: PackageCardsProps) => {
       </div>
 
       {/* Help Section */}
-      <HelpDeciding />
+      <NeedHelpSection />
     </div>
   );
 };
