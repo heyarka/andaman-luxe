@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { MapPin, Waves, Ship, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
@@ -14,6 +15,7 @@ const categories = [
     description: "Discover pristine islands, hidden beaches, and natural wonders across the Andaman archipelago",
     image: destinationsImg,
     items: ["Ross & Smith Islands", "Havelock Island", "Neil Island", "Cellular Jail"],
+    link: "/destinations",
   },
   {
     icon: Waves,
@@ -21,6 +23,7 @@ const categories = [
     description: "Experience thrilling adventures with scuba diving, snorkeling, jet skiing, and more",
     image: waterSportsImg,
     items: ["Scuba Diving", "Snorkeling", "Sea Walking", "Parasailing"],
+    link: "/water-sports",
   },
   {
     icon: Ship,
@@ -28,6 +31,7 @@ const categories = [
     description: "Explore inter-island ferry schedules, routes, pricing, and booking options",
     image: ferryImg,
     items: ["Makruzz Cruises", "Green Ocean", "Government Ferries", "Private Charters"],
+    link: "/ferry-services",
   },
 ];
 
@@ -99,10 +103,10 @@ const Explore = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-foreground/5">
+                <Link to={cat.link} className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-foreground/5">
                   Learn More
                   <ArrowRight className="h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
