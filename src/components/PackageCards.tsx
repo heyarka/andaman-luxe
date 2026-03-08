@@ -73,7 +73,8 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
 
   const handleWhatsApp = () => {
     if (selectedPkg) {
-      const message = `Hi! I'm interested in booking the "${selectedPkg.name}" package (${selectedPkg.duration}, ${selectedPkg.price} per person). Could you share more details?`;
+      const price = getPrice(selectedPkg);
+      const message = `Hi! I'm interested in booking the "${selectedPkg.name}" package (${selectedPkg.duration}, ${price} per person). Could you share more details?`;
       window.location.href = `https://wa.me/918637327297?text=${encodeURIComponent(message)}`;
     }
   };
