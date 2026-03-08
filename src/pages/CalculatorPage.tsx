@@ -304,7 +304,7 @@ const CalculatorPage = () => {
                   <h3 className="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
                     <span className="w-1 h-6 bg-accent rounded-full" /> Add-ons & extras
                   </h3>
-                  <div className="grid grid-cols-2 gap-4 mb-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
                     {extras.map((e, i) => (
                       <button
                         key={e.name}
