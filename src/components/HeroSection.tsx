@@ -11,6 +11,8 @@ const HeroSection = () => {
         style={{ backgroundImage: `url(${heroImage})` }}
       />
       <div className="absolute inset-0 hero-overlay" />
+      {/* Bottom gradient fade into background */}
+      <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-background via-background/80 to-transparent z-[1]" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-20">
