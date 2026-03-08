@@ -444,10 +444,10 @@ const CalculatorPage = () => {
                 {/* Line items */}
                 <div className="space-y-3 mb-6">
                   {breakdown.map((b) => (
-                    <div key={b.label} className="flex items-center justify-between text-sm">
-                      <span className="flex items-center gap-2 text-muted-foreground">
-                        <span className={`h-2 w-2 rounded-full ${b.color}`} />
-                        {b.label}
+                    <div key={b.label} className="flex items-center justify-between text-sm gap-2">
+                      <span className="flex items-center gap-2 text-muted-foreground min-w-0">
+                        <span className={`h-2 w-2 rounded-full ${b.color} shrink-0`} />
+                        <span className="truncate">{b.label}</span>
                       </span>
                       <span className="font-semibold text-foreground">₹{b.value.toLocaleString()}</span>
                     </div>
