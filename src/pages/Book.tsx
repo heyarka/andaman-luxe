@@ -24,13 +24,13 @@ const profiles = [
 ];
 
 const tripTypes = [
-  { icon: Heart, title: "Honeymoon", description: "Romantic getaway for two" },
-  { icon: Users, title: "Family Trip", description: "Fun for the whole family" },
-  { icon: Compass, title: "Adventure", description: "Thrilling experiences" },
-  { icon: Palmtree, title: "Leisure", description: "Relax and unwind" },
+  { icon: Heart, title: "Honeymoon Couples", description: "Romantic escapes & intimate experiences" },
+  { icon: Users, title: "Friends & Adventure", description: "Gen Z groups seeking thrills & fun" },
+  { icon: Smile, title: "Family Vacation", description: "Parents with kids, all ages welcome" },
+  { icon: Coffee, title: "Senior Travelers", description: "Relaxed pace, comfort & culture" },
 ];
 
-const stepLabels = ["Choose Your Profile", "Select Trip Type", "Your Details"];
+const stepLabels = ["Choose Your Profile", "Select Your Travel Style", "Your Details"];
 
 const Book = () => {
   const [step, setStep] = useState(1);
