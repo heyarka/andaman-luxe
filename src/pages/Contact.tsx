@@ -14,7 +14,7 @@ const Contact = () => {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.firstName.trim() || !form.email.trim() || !form.message.trim()) {
       toast({ title: "Please fill in required fields", variant: "destructive" });
@@ -25,11 +25,31 @@ const Contact = () => {
       return;
     }
     setSending(true);
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          access_key: "3b89840c-67a5-45d8-a4a4-342119d7c5de",
+          name: `${form.firstName} ${form.lastName}`.trim(),
+          email: form.email,
+          phone: form.phone,
+          travel_dates: form.travelDates,
+          message: form.message,
+        }),
+      });
+      const data = await response.json();
+      if (data.success) {
+        toast({ title: "Message sent!", description: "Our team will get back to you within 24 hours." });
+        setForm({ firstName: "", lastName: "", email: "", phone: "", travelDates: "", message: "" });
+      } else {
+        toast({ title: "Failed to send message", description: "Please try again later.", variant: "destructive" });
+      }
+    } catch {
+      toast({ title: "Network error", description: "Please check your connection and try again.", variant: "destructive" });
+    } finally {
       setSending(false);
-      toast({ title: "Message sent!", description: "Our team will get back to you within 24 hours." });
-      setForm({ firstName: "", lastName: "", email: "", phone: "", travelDates: "", message: "" });
-    }, 1000);
+    }
   };
 
   return (
