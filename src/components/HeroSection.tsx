@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Star, ArrowRight } from "lucide-react";
-import heroImage from "@/assets/hero-beach.jpg";
+import heroImage from "@/assets/hero-beach-bg.jpg";
 
 const HeroSection = () => {
   return (
