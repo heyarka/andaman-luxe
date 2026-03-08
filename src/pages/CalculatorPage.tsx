@@ -60,6 +60,9 @@ const CalculatorPage = () => {
   const [mealPlan, setMealPlan] = useState(1);
   const [selectedActivities, setSelectedActivities] = useState<number[]>([0, 1]);
   const [selectedExtras, setSelectedExtras] = useState<number[]>([0]);
+  const [includeFlights, setIncludeFlights] = useState(false);
+  const [includeInsurance, setIncludeInsurance] = useState(true);
+  const [miscPercent, setMiscPercent] = useState(10);
 
   const toggleDest = (i: number) =>
     setSelectedDest((prev) => (prev.includes(i) ? prev.filter((x) => x !== i) : [...prev, i]));
