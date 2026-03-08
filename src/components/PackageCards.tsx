@@ -168,7 +168,8 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
                 </button>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </HorizontalScroll>
       </div>
 
