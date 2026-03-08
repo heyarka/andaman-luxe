@@ -123,12 +123,12 @@ const PackageDetailPage = () => {
             <h2 className="font-display text-2xl font-bold text-foreground mb-6 italic">Detailed Itinerary</h2>
             
             {/* Day Tabs */}
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex gap-2 mb-6 overflow-x-auto scrollbar-hide pb-1">
               {pkg.itinerary.map((_, i) => (
                 <button
                   key={i}
                   onClick={() => setActiveDay(i)}
-                  className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+                  className={`px-3 md:px-4 py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-semibold transition-all whitespace-nowrap shrink-0 ${
                     activeDay === i
                       ? "bg-accent text-accent-foreground"
                       : "border border-foreground/10 text-muted-foreground hover:border-accent/50"
@@ -140,17 +140,17 @@ const PackageDetailPage = () => {
             </div>
 
             {/* Active Day Content */}
-            <div className="flex items-start gap-4">
-              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 shrink-0">
-                <Calendar className="h-6 w-6 text-accent" />
+            <div className="flex items-start gap-3 md:gap-4">
+              <div className="flex h-9 w-9 md:h-12 md:w-12 items-center justify-center rounded-xl bg-accent/15 shrink-0">
+                <Calendar className="h-4 w-4 md:h-6 md:w-6 text-accent" />
               </div>
-              <div>
-                <p className="text-sm text-muted-foreground">Day {activeDay + 1}</p>
-                <h3 className="font-display text-xl font-bold text-foreground mb-4">{pkg.itinerary[activeDay].title}</h3>
-                <ul className="space-y-3">
+              <div className="min-w-0">
+                <p className="text-xs md:text-sm text-muted-foreground">Day {activeDay + 1}</p>
+                <h3 className="font-display text-base md:text-xl font-bold text-foreground mb-3 md:mb-4">{pkg.itinerary[activeDay].title}</h3>
+                <ul className="space-y-2 md:space-y-3">
                   {pkg.itinerary[activeDay].activities.map((a, i) => (
-                    <li key={i} className="flex items-start gap-3 text-muted-foreground">
-                      <span className="h-2 w-2 rounded-full bg-accent mt-2 shrink-0" />
+                    <li key={i} className="flex items-start gap-2 md:gap-3 text-xs md:text-base text-muted-foreground">
+                      <span className="h-1.5 w-1.5 md:h-2 md:w-2 rounded-full bg-accent mt-1.5 shrink-0" />
                       {a}
                     </li>
                   ))}
