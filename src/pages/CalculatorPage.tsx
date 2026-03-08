@@ -413,7 +413,7 @@ const CalculatorPage = () => {
             </div>
 
             {/* Right: Estimate Sidebar */}
-            <div className="lg:sticky lg:top-24 h-fit">
+            <div className="min-w-0 lg:sticky lg:top-24 h-fit">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
