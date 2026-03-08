@@ -86,10 +86,10 @@ const PackageDetailPage = () => {
             </div>
 
             {/* Features Grid */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mt-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2 md:gap-3 mt-6">
               {pkg.features.map((f) => (
-                <div key={f} className="flex items-center gap-2 text-sm text-muted-foreground border border-foreground/10 rounded-lg p-3">
-                  <CheckCircle2 className="h-4 w-4 text-accent shrink-0" />
+                <div key={f} className="flex items-center gap-2 text-xs md:text-sm text-muted-foreground border border-foreground/10 rounded-lg p-2.5 md:p-3">
+                  <CheckCircle2 className="h-3.5 w-3.5 md:h-4 md:w-4 text-accent shrink-0" />
                   {f}
                 </div>
               ))}
