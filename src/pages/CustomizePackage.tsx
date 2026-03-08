@@ -216,7 +216,7 @@ const CustomizePackage = () => {
                 </div>
                 <h3 className="font-display text-lg font-bold text-foreground">Activities & Experiences</h3>
               </div>
-              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+              <div className="grid grid-cols-3 md:grid-cols-3 gap-2 md:gap-4">
                 {activities.map((activity) => {
                   const isSelected = selectedActivities.includes(activity.name);
                   const Icon = activity.icon;
@@ -224,12 +224,12 @@ const CustomizePackage = () => {
                     <button
                       key={activity.name}
                       onClick={() => toggleActivity(activity.name)}
-                      className={`rounded-xl border p-4 flex items-center gap-3 transition-all ${
+                      className={`rounded-xl border p-3 md:p-4 flex flex-col md:flex-row items-center gap-1.5 md:gap-3 transition-all text-center md:text-left ${
                         isSelected ? selectedClass : unselectedClass
                       }`}
                     >
-                      <Icon className={`h-5 w-5 shrink-0 ${isSelected ? "text-accent" : "text-muted-foreground"}`} />
-                      <span className={`text-sm font-medium ${isSelected ? "text-accent" : "text-foreground"}`}>
+                      <Icon className={`h-4 w-4 md:h-5 md:w-5 shrink-0 ${isSelected ? "text-accent" : "text-muted-foreground"}`} />
+                      <span className={`text-[11px] md:text-sm font-medium leading-tight ${isSelected ? "text-accent" : "text-foreground"}`}>
                         {activity.name}
                       </span>
                     </button>
