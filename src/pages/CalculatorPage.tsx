@@ -263,33 +263,33 @@ const CalculatorPage = () => {
                   <h3 className="font-display text-xl font-bold text-accent mb-6 flex items-center gap-2">
                     <span className="w-1 h-6 bg-accent rounded-full" /> Pick your activities
                   </h3>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     {activities.map((a, i) => (
                       <button
                         key={a.name}
                         onClick={() => toggleActivity(i)}
-                        className={`glass-card rounded-xl p-5 flex items-center gap-4 text-left transition-all ${
+                        className={`glass-card rounded-xl p-4 flex items-center gap-3 text-left transition-all ${
                           selectedActivities.includes(i) ? "border-accent bg-accent/5" : "hover:border-accent/30"
                         }`}
                       >
-                        <div className={`flex h-12 w-12 items-center justify-center rounded-xl shrink-0 ${
+                        <div className={`flex h-10 w-10 items-center justify-center rounded-xl shrink-0 ${
                           selectedActivities.includes(i) ? "bg-accent/20" : "bg-muted/50"
                         }`}>
-                          <a.icon className={`h-6 w-6 ${selectedActivities.includes(i) ? "text-accent" : "text-muted-foreground"}`} />
+                          <a.icon className={`h-5 w-5 ${selectedActivities.includes(i) ? "text-accent" : "text-muted-foreground"}`} />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1.5 flex-wrap">
                             <h4 className="font-bold text-foreground text-sm">{a.name}</h4>
                             {a.popular && (
-                              <span className="text-[10px] font-bold bg-accent text-accent-foreground px-2 py-0.5 rounded-full flex items-center gap-1">
-                                <Star className="h-3 w-3" fill="currentColor" /> Popular
+                              <span className="text-[10px] font-bold bg-accent text-accent-foreground px-1.5 py-0.5 rounded-full flex items-center gap-0.5 shrink-0">
+                                <Star className="h-2.5 w-2.5" fill="currentColor" /> Popular
                               </span>
                             )}
                           </div>
                           <p className="text-xs text-accent font-semibold mt-0.5">+₹{a.cost.toLocaleString()}/person</p>
                         </div>
                         {selectedActivities.includes(i) && (
-                          <CheckCircle2 className="h-6 w-6 text-accent shrink-0" />
+                          <CheckCircle2 className="h-5 w-5 text-accent shrink-0" />
                         )}
                       </button>
                     ))}
