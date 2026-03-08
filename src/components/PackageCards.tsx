@@ -15,6 +15,7 @@ import honeymoon3 from "@/assets/honeymoon-3.jpg";
 
 interface PackageCardsProps {
   tripType: string;
+  profile?: string;
   onStartOver: () => void;
 }
 

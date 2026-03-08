@@ -195,6 +195,7 @@ const Book = () => {
                 </button>
                 <PackageCards
                   tripType={tripType || "Honeymoon Couples"}
+                  profile={profile || "Indian Resident"}
                   onStartOver={() => { setStep(1); setProfile(null); setTripType(null); }}
                 />
               </motion.div>
