@@ -61,7 +61,7 @@ const HeroSection = () => {
             <ArrowRight className="h-4 w-4" />
           </a>
           <a
-            href="#packages"
+            href="/book"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-foreground/20 px-8 py-3.5 text-sm font-semibold text-foreground transition-all hover:bg-foreground/5"
           >
             View Packages
