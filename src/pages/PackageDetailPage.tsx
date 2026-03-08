@@ -339,6 +339,48 @@ const PackageDetailPage = () => {
         </div>
       </div>
 
+      {/* Booking Dialog */}
+      <Dialog open={showBooking} onOpenChange={setShowBooking}>
+        <DialogContent className="sm:max-w-md rounded-2xl border-foreground/10 bg-card p-0 overflow-hidden">
+          <div className="h-1.5 w-full bg-gradient-to-r from-accent via-primary to-accent" />
+          <div className="p-5 md:p-8">
+            <DialogHeader className="text-center sm:text-center mb-4 md:mb-6">
+              <div className="flex h-10 w-10 md:h-14 md:w-14 items-center justify-center rounded-full bg-accent/15 mx-auto mb-3 md:mb-4">
+                <Sparkles className="h-5 w-5 md:h-7 md:w-7 text-accent" />
+              </div>
+              <DialogTitle className="font-display text-lg md:text-2xl font-bold text-foreground">You're Ready to Book!</DialogTitle>
+              <DialogDescription className="text-xs md:text-base text-muted-foreground mt-2">
+                Great choice! You've selected the <span className="font-semibold text-accent">{pkg?.name}</span> package ({pkg?.duration}, {pkg?.price}/person).
+              </DialogDescription>
+            </DialogHeader>
+            <div className="space-y-2 md:space-y-3">
+              <button onClick={handleGoToContact} className="w-full rounded-xl bg-accent text-accent-foreground py-3 text-xs md:text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2">
+                Fill Out Contact Form <ArrowRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
+              </button>
+              <div className="flex items-center gap-3 my-1">
+                <div className="h-px flex-1 bg-foreground/10" />
+                <span className="text-[9px] md:text-xs text-muted-foreground uppercase tracking-wider">or reach us directly</span>
+                <div className="h-px flex-1 bg-foreground/10" />
+              </div>
+              <div className="grid grid-cols-3 gap-2 md:gap-3">
+                <button onClick={handleWhatsApp} className="flex flex-col items-center gap-1.5 md:gap-2 rounded-xl border border-foreground/10 py-3 md:py-4 px-2 hover:bg-accent/5 hover:border-accent/30 transition-all">
+                  <MessageCircle className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+                  <span className="text-[10px] md:text-xs font-semibold text-foreground">WhatsApp</span>
+                </button>
+                <button onClick={handleCall} className="flex flex-col items-center gap-1.5 md:gap-2 rounded-xl border border-foreground/10 py-3 md:py-4 px-2 hover:bg-accent/5 hover:border-accent/30 transition-all">
+                  <Phone className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+                  <span className="text-[10px] md:text-xs font-semibold text-foreground">Call Us</span>
+                </button>
+                <button onClick={handleEmail} className="flex flex-col items-center gap-1.5 md:gap-2 rounded-xl border border-foreground/10 py-3 md:py-4 px-2 hover:bg-accent/5 hover:border-accent/30 transition-all">
+                  <Mail className="h-4 w-4 md:h-5 md:w-5 text-accent" />
+                  <span className="text-[10px] md:text-xs font-semibold text-foreground">Email</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </DialogContent>
+      </Dialog>
+
       <Footer />
     </div>
   );
