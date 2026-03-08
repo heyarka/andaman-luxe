@@ -32,14 +32,18 @@ const mealPlans = [
 ];
 
 const activities = [
-  { name: "Scuba Diving", cost: 3500 },
-  { name: "Snorkeling", cost: 1500 },
-  { name: "Sea Walking", cost: 3000 },
-  { name: "Parasailing", cost: 2000 },
-  { name: "Jet Ski", cost: 1500 },
-  { name: "Glass Bottom Boat", cost: 800 },
-  { name: "Kayaking", cost: 1000 },
-  { name: "Banana Boat", cost: 700 },
+  { name: "Scuba Diving", cost: 5000, icon: Fish, popular: true },
+  { name: "Sea Walking", cost: 4000, icon: Anchor, popular: false },
+  { name: "Snorkeling", cost: 1500, icon: Waves, popular: true },
+  { name: "Parasailing", cost: 3500, icon: Wind, popular: false },
+  { name: "Night Kayaking", cost: 3500, icon: Sailboat, popular: true },
+  { name: "Glass Bottom Boat", cost: 2500, icon: Ship, popular: false },
+  { name: "Jet Ski Ride", cost: 1500, icon: Waves, popular: false },
+  { name: "Semi Submarine", cost: 2500, icon: Anchor, popular: false },
+  { name: "Sofa Ride", cost: 1000, icon: Sofa, popular: false },
+  { name: "Banana Ride", cost: 1000, icon: Waves, popular: false },
+  { name: "Candlelight Dinner", cost: 8000, icon: Flame, popular: false },
+  { name: "Photography Tour", cost: 6000, icon: Camera, popular: false },
 ];
 
 const extras = [
