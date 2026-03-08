@@ -9,6 +9,7 @@ import Destinations from "./pages/Destinations";
 import WaterSports from "./pages/WaterSports";
 import FerryServices from "./pages/FerryServices";
 import Book from "./pages/Book";
+import CustomizePackage from "./pages/CustomizePackage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
