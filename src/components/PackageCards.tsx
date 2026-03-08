@@ -147,7 +147,7 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
               </div>
 
               <p className="mb-4">
-                <span className="text-2xl font-bold text-accent">{pkg.price}</span>
+                <span className="text-2xl font-bold text-accent">{getPrice(pkg)}</span>
                 <span className="text-sm text-muted-foreground"> per person</span>
               </p>
 
