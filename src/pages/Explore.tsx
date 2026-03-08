@@ -116,13 +116,13 @@ const Explore = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="px-6 pb-24">
+      <section className="px-4 md:px-6 pb-10 md:pb-24">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="container mx-auto max-w-3xl glass-card rounded-2xl p-10 text-center"
+          className="container mx-auto max-w-3xl glass-card rounded-xl md:rounded-2xl p-6 md:p-10 text-center"
         >
           <h2 className="font-display text-2xl md:text-3xl font-bold text-foreground mb-4">
             Ready to Plan Your Trip?
