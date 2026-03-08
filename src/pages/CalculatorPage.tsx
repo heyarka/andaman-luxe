@@ -1,6 +1,6 @@
 import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Calculator, MapPin, Minus, Plus, Hotel, UtensilsCrossed, Waves, ShieldCheck, ArrowLeft, ArrowRight, Sparkles } from "lucide-react";
+import { Calculator, MapPin, Minus, Plus, Hotel, UtensilsCrossed, Waves, ShieldCheck, ArrowLeft, ArrowRight, Sparkles, Plane, CheckCircle2, ShoppingBag } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
