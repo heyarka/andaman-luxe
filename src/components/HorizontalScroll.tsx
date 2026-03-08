@@ -34,12 +34,12 @@ const HorizontalScroll = ({ children, className = "" }: HorizontalScrollProps) =
     <div className="relative md:contents">
       {/* Fade edges as scroll hints */}
       <div
-        className={`pointer-events-none absolute left-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-r from-background to-transparent transition-opacity duration-200 md:hidden ${
+        className={`pointer-events-none absolute left-0 top-0 bottom-0 w-10 z-20 bg-gradient-to-r from-background via-background/60 to-transparent transition-opacity duration-200 md:hidden ${
           canScrollLeft ? "opacity-100" : "opacity-0"
         }`}
       />
       <div
-        className={`pointer-events-none absolute right-0 top-0 bottom-0 w-6 z-10 bg-gradient-to-l from-background to-transparent transition-opacity duration-200 md:hidden ${
+        className={`pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-20 bg-gradient-to-l from-background via-background/60 to-transparent transition-opacity duration-200 md:hidden ${
           canScrollRight ? "opacity-100" : "opacity-0"
         }`}
       />
