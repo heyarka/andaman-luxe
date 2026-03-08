@@ -20,27 +20,27 @@ interface PackageCardsProps {
 }
 
 const honeymoonPackages = [
-  { slug: "romantic-bliss", name: "Romantic Bliss", duration: "5D/4N", islands: "2 Islands", price: "$2,899", image: honeymoon1, recommended: false, features: ["Private beach villa with ocean view", "Candlelit dinner on the beach", "Couples spa & massage", "Sunset cruise for two"] },
-  { slug: "paradise-romance", name: "Paradise Romance", duration: "7D/6N", islands: "3 Islands", price: "$4,999", image: honeymoon2, recommended: true, features: ["Luxury overwater bungalow", "Private yacht day tour", "Professional couple photoshoot", "Premium dining experiences", "Scuba diving for two"] },
-  { slug: "ultimate-escape", name: "Ultimate Escape", duration: "10D/9N", islands: "4 Islands", price: "$7,999", image: honeymoon3, recommended: false, features: ["Presidential villa suite", "Helicopter island hopping", "Private chef & butler", "Unlimited spa treatments", "Exclusive beach access"] },
+  { slug: "romantic-bliss", name: "Romantic Bliss", duration: "5D/4N", islands: "2 Islands", priceUSD: "$2,899", priceINR: "₹24,999", image: honeymoon1, recommended: false, features: ["Private beach villa with ocean view", "Candlelit dinner on the beach", "Couples spa & massage", "Sunset cruise for two"] },
+  { slug: "paradise-romance", name: "Paradise Romance", duration: "7D/6N", islands: "3 Islands", priceUSD: "$4,999", priceINR: "₹42,999", image: honeymoon2, recommended: true, features: ["Luxury overwater bungalow", "Private yacht day tour", "Professional couple photoshoot", "Premium dining experiences", "Scuba diving for two"] },
+  { slug: "ultimate-escape", name: "Ultimate Escape", duration: "10D/9N", islands: "4 Islands", priceUSD: "$7,999", priceINR: "₹67,999", image: honeymoon3, recommended: false, features: ["Presidential villa suite", "Helicopter island hopping", "Private chef & butler", "Unlimited spa treatments", "Exclusive beach access"] },
 ];
 
 const familyPackages = [
-  { slug: "family-fun", name: "Family Fun", duration: "5D/4N", islands: "2 Islands", price: "$1,999", image: honeymoon1, recommended: false, features: ["Family-friendly resort", "Kids activity programs", "Glass-bottom boat ride", "Beach picnic experience"] },
-  { slug: "island-explorer", name: "Island Explorer", duration: "7D/6N", islands: "3 Islands", price: "$3,499", image: honeymoon2, recommended: true, features: ["Multi-island hopping tour", "Snorkeling for all ages", "Cultural village visits", "Mangrove kayaking", "Underwater sea walk"] },
-  { slug: "grand-family", name: "Grand Family", duration: "10D/9N", islands: "4 Islands", price: "$5,999", image: honeymoon3, recommended: false, features: ["Premium family suite", "Private island day trip", "Adventure sports package", "Photography session", "All-inclusive dining"] },
+  { slug: "family-fun", name: "Family Fun", duration: "5D/4N", islands: "2 Islands", priceUSD: "$1,999", priceINR: "₹16,999", image: honeymoon1, recommended: false, features: ["Family-friendly resort", "Kids activity programs", "Glass-bottom boat ride", "Beach picnic experience"] },
+  { slug: "island-explorer", name: "Island Explorer", duration: "7D/6N", islands: "3 Islands", priceUSD: "$3,499", priceINR: "₹29,999", image: honeymoon2, recommended: true, features: ["Multi-island hopping tour", "Snorkeling for all ages", "Cultural village visits", "Mangrove kayaking", "Underwater sea walk"] },
+  { slug: "grand-family", name: "Grand Family", duration: "10D/9N", islands: "4 Islands", priceUSD: "$5,999", priceINR: "₹49,999", image: honeymoon3, recommended: false, features: ["Premium family suite", "Private island day trip", "Adventure sports package", "Photography session", "All-inclusive dining"] },
 ];
 
 const adventurePackages = [
-  { slug: "thrill-seeker", name: "Thrill Seeker", duration: "4D/3N", islands: "2 Islands", price: "$1,499", image: honeymoon1, recommended: false, features: ["Scuba diving sessions", "Jet ski & parasailing", "Night beach bonfire", "Trekking expedition"] },
-  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", price: "$2,999", image: honeymoon2, recommended: true, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
-  { slug: "ultimate-explorer", name: "Ultimate Explorer", duration: "9D/8N", islands: "5 Islands", price: "$5,499", image: honeymoon3, recommended: false, features: ["Helicopter tour", "Private speedboat", "Underwater photography", "Jungle survival camp", "Full adventure bundle"] },
+  { slug: "thrill-seeker", name: "Thrill Seeker", duration: "4D/3N", islands: "2 Islands", priceUSD: "$1,499", priceINR: "₹12,999", image: honeymoon1, recommended: false, features: ["Scuba diving sessions", "Jet ski & parasailing", "Night beach bonfire", "Trekking expedition"] },
+  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", priceUSD: "$2,999", priceINR: "₹24,999", image: honeymoon2, recommended: true, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
+  { slug: "ultimate-explorer", name: "Ultimate Explorer", duration: "9D/8N", islands: "5 Islands", priceUSD: "$5,499", priceINR: "₹45,999", image: honeymoon3, recommended: false, features: ["Helicopter tour", "Private speedboat", "Underwater photography", "Jungle survival camp", "Full adventure bundle"] },
 ];
 
 const seniorPackages = [
-  { slug: "serene-getaway", name: "Serene Getaway", duration: "5D/4N", islands: "2 Islands", price: "$2,199", image: honeymoon1, recommended: false, features: ["Comfortable resort stay", "Guided heritage walks", "Scenic boat cruise", "Wellness spa sessions"] },
-  { slug: "golden-retreat", name: "Golden Retreat", duration: "7D/6N", islands: "3 Islands", price: "$3,799", image: honeymoon2, recommended: true, features: ["Premium accessible rooms", "Private car transfers", "Cultural excursions", "Gourmet dining", "Sunset photography tour"] },
-  { slug: "platinum-leisure", name: "Platinum Leisure", duration: "10D/9N", islands: "4 Islands", price: "$6,499", image: honeymoon3, recommended: false, features: ["Luxury suite with sea view", "Personal travel assistant", "Daily wellness program", "Exclusive island tour", "All meals included"] },
+  { slug: "serene-getaway", name: "Serene Getaway", duration: "5D/4N", islands: "2 Islands", priceUSD: "$2,199", priceINR: "₹18,999", image: honeymoon1, recommended: false, features: ["Comfortable resort stay", "Guided heritage walks", "Scenic boat cruise", "Wellness spa sessions"] },
+  { slug: "golden-retreat", name: "Golden Retreat", duration: "7D/6N", islands: "3 Islands", priceUSD: "$3,799", priceINR: "₹31,999", image: honeymoon2, recommended: true, features: ["Premium accessible rooms", "Private car transfers", "Cultural excursions", "Gourmet dining", "Sunset photography tour"] },
+  { slug: "platinum-leisure", name: "Platinum Leisure", duration: "10D/9N", islands: "4 Islands", priceUSD: "$6,499", priceINR: "₹54,999", image: honeymoon3, recommended: false, features: ["Luxury suite with sea view", "Personal travel assistant", "Daily wellness program", "Exclusive island tour", "All meals included"] },
 ];
 
 function getPackages(tripType: string) {
