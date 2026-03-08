@@ -91,9 +91,9 @@
   .hero-overlay {
     background: linear-gradient(
       180deg,
-      hsl(200, 30%, 95%, 0.05) 0%,
-      hsl(200, 20%, 98%, 0.15) 40%,
-      hsl(0, 0%, 100%, 0.75) 100%
+      transparent 0%,
+      hsl(0, 0%, 100%, 0.05) 60%,
+      hsl(0, 0%, 100%, 0.85) 100%
     );
   }
 
