@@ -103,10 +103,10 @@ const Explore = () => {
                     </li>
                   ))}
                 </ul>
-                <button className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-foreground/5">
+                <Link to={cat.link} className="mt-auto w-full inline-flex items-center justify-center gap-2 rounded-lg border border-foreground/20 px-6 py-3 text-sm font-semibold text-foreground transition-all hover:bg-foreground/5">
                   Learn More
                   <ArrowRight className="h-4 w-4" />
-                </button>
+                </Link>
               </div>
             </motion.div>
           ))}
