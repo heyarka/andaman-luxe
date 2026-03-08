@@ -32,8 +32,8 @@ const familyPackages = [
 ];
 
 const adventurePackages = [
-  { slug: "thrill-seeker", name: "Thrill Seeker", duration: "4D/3N", islands: "2 Islands", priceUSD: "$1,499", priceINR: "₹12,999", image: honeymoon1, recommended: false, features: ["Scuba diving sessions", "Jet ski & parasailing", "Night beach bonfire", "Trekking expedition"] },
-  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", priceUSD: "$2,999", priceINR: "₹24,999", image: honeymoon2, recommended: true, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
+  { slug: "thrill-seeker", name: "Andaman Thrill-Seeker Expedition", duration: "6D/5N", islands: "3 Islands", priceUSD: "$420", priceINR: "₹34,999", image: honeymoon1, recommended: true, features: ["Introductory Scuba Dive", "Night Kayaking in Mangroves", "Elephant Beach Jungle Trek", "Baratang Limestone Caves"] },
+  { slug: "epic-adventure", name: "Epic Adventure", duration: "6D/5N", islands: "3 Islands", priceUSD: "$2,999", priceINR: "₹24,999", image: honeymoon2, recommended: false, features: ["Deep sea diving certification", "Island camping experience", "Kayaking & snorkeling", "Fishing trip", "Volcano mud trek"] },
   { slug: "ultimate-explorer", name: "Ultimate Explorer", duration: "9D/8N", islands: "5 Islands", priceUSD: "$5,499", priceINR: "₹45,999", image: honeymoon3, recommended: false, features: ["Helicopter tour", "Private speedboat", "Underwater photography", "Jungle survival camp", "Full adventure bundle"] },
 ];
 
