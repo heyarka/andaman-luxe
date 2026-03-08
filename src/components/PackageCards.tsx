@@ -54,7 +54,7 @@ const PackageCards = ({ tripType, onStartOver }: PackageCardsProps) => {
           <Star className="h-7 w-7 text-accent" />
         </div>
         <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
-          Your <span className="text-accent italic">Perfect Packages</span>
+          Your <span className="text-gradient-hero italic">Perfect Packages</span>
         </h1>
         <p className="text-muted-foreground mb-4">Handpicked experiences curated just for you</p>
         <button

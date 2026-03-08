@@ -162,7 +162,7 @@ const WhyChooseUs = () => {
           >
             <p className="text-sm font-semibold uppercase tracking-wider text-accent mb-4">Our Promise</p>
             <h2 className="font-display text-3xl md:text-4xl font-bold text-foreground">
-              What Sets Us <span className="text-accent italic">Apart</span>
+              What Sets Us <span className="text-gradient-hero italic">Apart</span>
             </h2>
           </motion.div>
 

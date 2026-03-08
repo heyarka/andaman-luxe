@@ -65,7 +65,7 @@ const FerryServices = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-4xl md:text-6xl font-bold text-foreground mb-6"
+          className="font-display text-4xl md:text-6xl font-bold text-gradient-hero mb-6"
         >
           Navigate the Islands
         </motion.h1>

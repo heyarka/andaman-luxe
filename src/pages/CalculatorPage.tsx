@@ -116,7 +116,7 @@ const CalculatorPage = () => {
             <Calculator className="h-8 w-8 text-accent" />
           </div>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-2">
-            Plan Your <span className="text-accent italic">Dream Escape</span>
+            Plan Your <span className="text-gradient-hero italic">Dream Escape</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Calculate your perfect Andaman getaway with our interactive cost estimator. Customize every detail and get instant pricing for 2025-2026.

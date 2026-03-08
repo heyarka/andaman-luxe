@@ -90,7 +90,7 @@ const CustomizePackage = () => {
               <Sparkles className="h-7 w-7 text-accent" />
             </div>
             <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
-              Customize Your <span className="text-accent italic">Dream Trip</span>
+              Customize Your <span className="text-gradient-hero italic">Dream Trip</span>
             </h1>
             <p className="text-muted-foreground">
               Build the perfect Andaman experience tailored to your preferences

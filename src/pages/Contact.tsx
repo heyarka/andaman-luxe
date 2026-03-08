@@ -43,7 +43,7 @@ const Contact = () => {
             Get In Touch
           </span>
           <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-3">
-            Plan Your <span className="text-accent italic">Journey</span>
+            Plan Your <span className="text-gradient-hero italic">Journey</span>
           </h1>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Our travel experts are ready to create your perfect Andaman experience

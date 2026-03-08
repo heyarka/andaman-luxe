@@ -103,7 +103,7 @@ const Book = () => {
             {step === 2 && (
               <>
                 <h1 className="font-display text-3xl md:text-5xl font-bold text-foreground mb-3">
-                  Who Are You <span className="text-accent italic">Traveling With?</span>
+                  Who Are You <span className="text-gradient-hero italic">Traveling With?</span>
                 </h1>
                 <p className="text-muted-foreground">We'll curate the perfect experience for your group</p>
               </>
