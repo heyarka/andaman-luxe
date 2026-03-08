@@ -160,23 +160,23 @@ const PackageDetailPage = () => {
           </motion.div>
 
           {/* Included / Not Included */}
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
+          <div className="grid grid-cols-2 gap-3 md:gap-6 mb-8">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="glass-card rounded-2xl p-6 md:p-8"
+              className="glass-card rounded-xl md:rounded-2xl p-3 md:p-8"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-green-500/20">
-                  <CheckCircle2 className="h-5 w-5 text-green-500" />
+              <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-6">
+                <div className="flex h-7 w-7 md:h-10 md:w-10 items-center justify-center rounded-lg bg-green-500/20">
+                  <CheckCircle2 className="h-3.5 w-3.5 md:h-5 md:w-5 text-green-500" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-foreground">What's Included</h3>
+                <h3 className="font-display text-xs md:text-xl font-bold text-foreground">Included</h3>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-1.5 md:space-y-3">
                 {pkg.included.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-muted-foreground">
-                    <CheckCircle2 className="h-4 w-4 text-green-500 mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-1.5 md:gap-3 text-[10px] md:text-base text-muted-foreground">
+                    <CheckCircle2 className="h-3 w-3 md:h-4 md:w-4 text-green-500 mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
@@ -187,18 +187,18 @@ const PackageDetailPage = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45 }}
-              className="glass-card rounded-2xl p-6 md:p-8"
+              className="glass-card rounded-xl md:rounded-2xl p-3 md:p-8"
             >
-              <div className="flex items-center gap-3 mb-6">
-                <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-red-500/20">
-                  <X className="h-5 w-5 text-red-500" />
+              <div className="flex items-center gap-2 md:gap-3 mb-3 md:mb-6">
+                <div className="flex h-7 w-7 md:h-10 md:w-10 items-center justify-center rounded-lg bg-red-500/20">
+                  <X className="h-3.5 w-3.5 md:h-5 md:w-5 text-red-500" />
                 </div>
-                <h3 className="font-display text-xl font-bold text-foreground">Not Included</h3>
+                <h3 className="font-display text-xs md:text-xl font-bold text-foreground">Not Included</h3>
               </div>
-              <ul className="space-y-3">
+              <ul className="space-y-1.5 md:space-y-3">
                 {pkg.notIncluded.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-muted-foreground">
-                    <X className="h-4 w-4 text-red-500 mt-0.5 shrink-0" />
+                  <li key={item} className="flex items-start gap-1.5 md:gap-3 text-[10px] md:text-base text-muted-foreground">
+                    <X className="h-3 w-3 md:h-4 md:w-4 text-red-500 mt-0.5 shrink-0" />
                     {item}
                   </li>
                 ))}
