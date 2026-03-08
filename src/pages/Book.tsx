@@ -148,7 +148,6 @@ const Book = () => {
               </motion.div>
             )}
 
-            {/* Step 2: Trip Type */}
             {step === 2 && (
               <motion.div
                 key="step2"
@@ -157,31 +156,31 @@ const Book = () => {
                 exit={{ opacity: 0, x: 30 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <button
+                  onClick={() => setStep(1)}
+                  className="mb-8 inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
+                >
+                  <ArrowLeft className="h-4 w-4" /> Back
+                </button>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                   {tripTypes.map((t) => (
                     <button
                       key={t.title}
                       onClick={() => handleTripSelect(t.title)}
-                      className={`glass-card rounded-2xl p-8 text-left transition-all hover:border-accent/50 hover:bg-accent/5 ${
+                      className={`glass-card rounded-2xl p-6 text-center transition-all hover:border-accent/50 hover:bg-accent/5 ${
                         tripType === t.title ? "border-accent bg-accent/10" : ""
                       }`}
                     >
-                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 mb-5">
+                      <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-accent/15 mb-5 mx-auto">
                         <t.icon className="h-6 w-6 text-accent" />
                       </div>
-                      <h3 className="font-display text-lg font-bold text-foreground mb-1">
+                      <h3 className="font-display text-base font-bold text-foreground mb-1">
                         {t.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">{t.description}</p>
+                      <p className="text-xs text-muted-foreground">{t.description}</p>
                     </button>
                   ))}
                 </div>
-                <button
-                  onClick={() => setStep(1)}
-                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  <ArrowLeft className="h-4 w-4" /> Back
-                </button>
               </motion.div>
             )}
 
