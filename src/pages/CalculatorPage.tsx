@@ -4,6 +4,7 @@ import { Calculator, MapPin, Minus, Plus, Hotel, UtensilsCrossed, Waves, ShieldC
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
 import Footer from "@/components/Footer";
+import SectionDivider from "@/components/SectionDivider";
 import honeymoon1 from "@/assets/honeymoon-1.jpg";
 import honeymoon2 from "@/assets/honeymoon-2.jpg";
 import honeymoon3 from "@/assets/honeymoon-3.jpg";
