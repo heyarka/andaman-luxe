@@ -3,17 +3,46 @@ import { useParams, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
   ArrowLeft, Star, Clock, MapPin, CheckCircle2, X, Calendar,
-  Hotel, UtensilsCrossed, Ship, ShieldCheck, Phone, Mail, Info
+  Hotel, UtensilsCrossed, Ship, ShieldCheck, Phone, Mail, Info,
+  Sparkles, MessageCircle, ArrowRight
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { getPackageBySlug } from "@/data/packageDetails";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 const PackageDetailPage = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
   const pkg = getPackageBySlug(slug || "");
   const [activeDay, setActiveDay] = useState(0);
+  const [showBooking, setShowBooking] = useState(false);
+
+  const handleWhatsApp = () => {
+    if (pkg) {
+      const message = `Hi! I'm interested in booking the "${pkg.name}" package (${pkg.duration}, ${pkg.price}/person). Could you share more details?`;
+      window.location.href = `https://wa.me/918637327297?text=${encodeURIComponent(message)}`;
+    }
+  };
+  const handleCall = () => window.open("tel:+918637327297", "_self");
+  const handleEmail = () => {
+    if (pkg) {
+      const subject = `Booking Inquiry: ${pkg.name} Package`;
+      const body = `Hi,\n\nI'm interested in the "${pkg.name}" package (${pkg.duration}, ${pkg.price}/person).\n\nPlease share more details.\n\nThank you!`;
+      window.open(`mailto:contact@andamanluxe.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`, "_self");
+    }
+  };
+  const handleGoToContact = () => {
+    if (pkg) {
+      navigate(`/contact?package=${encodeURIComponent(pkg.name)}&duration=${encodeURIComponent(pkg.duration)}&price=${encodeURIComponent(pkg.price)}`);
+    }
+  };
 
   if (!pkg) {
     return (
