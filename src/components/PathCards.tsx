@@ -3,7 +3,7 @@ import { Compass, CalendarCheck, MapPin, Waves, Ship, Sparkles, CheckCircle, Arr
 
 const PathCards = () => {
   return (
-    <section id="explore" className="relative py-10 md:py-24 px-4 md:px-6">
+    <section id="explore" className="relative py-6 md:py-12 px-4 md:px-6">
       <div className="container mx-auto grid grid-cols-2 gap-4 md:gap-8 max-w-5xl">
         {/* Explore Card */}
         <motion.div
