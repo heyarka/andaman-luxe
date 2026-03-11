@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-beach-bg.jpg";
+import AnimatedExploreButton from "./AnimatedExploreButton";
 
 const HeroSection = () => {
   return (
