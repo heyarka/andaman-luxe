@@ -17,6 +17,7 @@ const Index = () => {
       <HeroSection />
       <DestinationGrid />
       <ExperiencesSection />
+      <RecommendedPackages />
       <TripBuilder />
       <StatsSection />
       <TestimonialsCarousel />
