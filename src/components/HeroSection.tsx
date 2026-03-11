@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import heroImage from "@/assets/hero-beach-bg.jpg";
+import AnimatedExploreButton from "./AnimatedExploreButton";
 
 const HeroSection = () => {
   return (
@@ -57,12 +58,7 @@ const HeroSection = () => {
             Plan Your Trip
             <ArrowRight className="h-4 w-4" />
           </a>
-          <a
-            href="/explore"
-            className="inline-flex items-center justify-center gap-2.5 rounded-full btn-outline-light px-8 py-3.5 text-sm font-semibold font-body"
-          >
-            Explore Destinations
-          </a>
+          <AnimatedExploreButton />
         </motion.div>
       </div>
 
