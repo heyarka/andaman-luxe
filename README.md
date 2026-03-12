@@ -1,73 +1,68 @@
-# Welcome to your Lovable project
+# Andaman Luxe — Premium Island Travel Website
 
-## Project info
+A luxury travel website for the Andaman Islands, built with React, Vite, TypeScript, and Tailwind CSS.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## 🚀 Run Locally (Quick Start)
 
-## How can I edit this code?
+### Prerequisites
 
-There are several ways of editing your application.
+Make sure you have **Node.js 18+** and **npm** installed.
+- Check: `node -v` and `npm -v`
+- Install Node.js: https://nodejs.org/ (download the LTS version)
 
-**Use Lovable**
-
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
-
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
+### Steps
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone https://github.com/heyarka/andaman-luxe.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Go into the project folder
+cd andaman-luxe
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### ✅ Open in browser
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Once the server starts, open: **http://localhost:8080**
 
-**Use GitHub Codespaces**
+> **Note:** The app runs on port **8080**, not 3000.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+The development server supports hot-reload — any file changes you save will instantly appear in the browser without refreshing.
 
-## What technologies are used for this project?
+---
 
-This project is built with:
+## 🛠 Tech Stack
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **React 18** — UI framework
+- **Vite** — fast build tool & dev server
+- **TypeScript** — type-safe JavaScript
+- **Tailwind CSS** — utility-first CSS
+- **shadcn/ui** — accessible UI components
+- **React Router** — client-side routing
+- **Framer Motion** — animations
 
-## How can I deploy this project?
+## 📁 Project Structure
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+```
+src/
+├── pages/          # Route pages (Index, Destinations, Book, etc.)
+├── components/     # Reusable UI components
+├── data/           # Static data (packages, destinations, etc.)
+├── hooks/          # Custom React hooks
+└── lib/            # Utility functions
+```
 
-## Can I connect a custom domain to my Lovable project?
+## 📦 Available Scripts
 
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+| Command | Description |
+|---|---|
+| `npm run dev` | Start development server at http://localhost:8080 |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build locally |
+| `npm run lint` | Run ESLint |
+| `npm test` | Run tests |
