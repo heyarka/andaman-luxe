@@ -171,7 +171,7 @@ const animatedButtonStyles = `
     display: flex;
     position: relative;
   }
-  .state-default span:nth-child(4) { margin-right: 5px; }
+  .state-default span:nth-child(7) { margin-right: 5px; }
   .state-sent { display: none; }
   .state-sent svg { transform: scale(1.25); margin-right: 8px; }
   .plane-button.focused .state-default { position: absolute; }
