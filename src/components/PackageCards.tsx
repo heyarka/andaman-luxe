@@ -56,13 +56,17 @@ function getPackages(tripType: string) {
 
 const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: PackageCardsProps) => {
   const packages = getPackages(tripType);
+  const recommendedIndex = packages.findIndex((p) => p.recommended);
+  const defaultFocusedIndex = packages.length > 2
+    ? Math.min(Math.max(recommendedIndex !== -1 ? recommendedIndex : 1, 1), packages.length - 2)
+    : (recommendedIndex !== -1 ? recommendedIndex : 0);
   const navigate = useNavigate();
   const [selectedPkg, setSelectedPkg] = useState<typeof packages[0] | null>(null);
   const [selectedDetailsPackage, setSelectedDetailsPackage] = useState<typeof packages[0] | null>(null);
   const [selectedCustomizationPackage, setSelectedCustomizationPackage] = useState<typeof packages[0] | null>(null);
   const [customizationRequestType, setCustomizationRequestType] = useState<"customize" | "book">("customize");
   const [showCustomizationPremium, setShowCustomizationPremium] = useState(false);
-  const [focusedIdx, setFocusedIdx] = useState<number>(packages.findIndex(p => p.recommended) !== -1 ? packages.findIndex(p => p.recommended) : 0);
+  const [focusedIdx, setFocusedIdx] = useState<number>(defaultFocusedIndex);
   const isInternational = profile === "International Traveler";
   const getPrice = (pkg: typeof packages[0]) => isInternational ? pkg.priceUSD : pkg.priceINR;
 
@@ -115,21 +119,21 @@ const PackageCards = ({ tripType, profile = "Indian Resident", onStartOver }: Pa
       </div>
 
       {/* Package Cards - Horizontal scroll on mobile */}
-      <div className="mb-6 md:mb-12">
-        <HorizontalScroll className="md:grid-cols-3">
+      <div className="mb-6 md:mb-12 overflow-hidden">
+        <HorizontalScroll className="md:grid-cols-3 gap-2" showEdgeFade={false} mobilePeek initialCenterIndex={defaultFocusedIndex} focusedCardIndex={focusedIdx} provokeSwipe>
           {packages.map((pkg, i) => {
             const isFocused = focusedIdx === i;
             return (
             <motion.div
               key={pkg.name}
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0, scale: isFocused ? 1 : 0.92 }}
-              transition={{ duration: 0.4, delay: i * 0.15, scale: { duration: 0.3 } }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.4, delay: i * 0.15 }}
               onClick={() => setFocusedIdx(i)}
-              className={`group rounded-2xl md:rounded-3xl overflow-hidden shrink-0 w-[75vw] md:w-auto snap-center cursor-pointer transition-all duration-300 ${
+              className={`group rounded-2xl md:rounded-3xl overflow-hidden shrink-0 w-[70vw] md:w-auto snap-center cursor-pointer transition-all duration-300 ${
                 isFocused
-                  ? "border border-amber-400/70 shadow-[0_20px_55px_-24px_rgba(245,158,11,0.55)] z-10"
-                  : "border border-amber-200/50 opacity-95 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] hover:border-amber-300/70"
+                  ? "border border-amber-400/70 shadow-[0_20px_55px_-24px_rgba(245,158,11,0.55)] z-10 opacity-100"
+                  : "border border-amber-200/50 opacity-45 md:opacity-95 shadow-[0_14px_40px_-30px_rgba(15,23,42,0.6)] cursor-pointer"
               } bg-gradient-to-b from-white via-white to-amber-50/50`}
             >
               {pkg.recommended && (

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Globe, Plane, Home, Users, Heart, Smile, Coffee, ArrowLeft, Check } from "lucide-react";
+import { Globe, Plane, Home, Users, Heart, Smile, Coffee, ArrowLeft, Check, UserRound, Compass } from "lucide-react";
 import { useLocation } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import ReviewsSection from "@/components/ReviewsSection";
@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import SectionDivider from "@/components/SectionDivider";
 import HorizontalScroll from "@/components/HorizontalScroll";
 import PackageCards from "@/components/PackageCards";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const profiles = [
   { icon: Globe, title: "International Traveler", description: "Visiting India from abroad" },
@@ -30,8 +31,11 @@ const Book = () => {
   const [profile, setProfile] = useState<string | null>(null);
   const [tripType, setTripType] = useState<string | null>(null);
 
-  const handleProfileSelect = (title: string) => { setProfile(title); setStep(2); };
-  const handleTripSelect = (title: string) => { setTripType(title); setStep(3); };
+  const handleProfileSelect = (title: string) => { setProfile(title); };
+  const handleTripSelect = (title: string) => { setTripType(title); };
+
+  const selectedProfileDescription = profiles.find((p) => p.title === profile)?.description;
+  const selectedTripDescription = tripTypes.find((t) => t.title === tripType)?.description;
 
   useEffect(() => {
     if (location.hash !== "#packages") return;
@@ -85,41 +89,131 @@ const Book = () => {
           <AnimatePresence mode="wait">
             {step === 1 && (
               <motion.div key="step1" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 30 }} transition={{ duration: 0.3 }}>
-                <HorizontalScroll className="md:grid-cols-3">
-                  {profiles.map((p) => (
-                    <button
-                      key={p.title}
-                      onClick={() => handleProfileSelect(p.title)}
-                      className={`glass-card rounded-xl md:rounded-2xl p-4 md:p-8 text-left transition-all hover:border-accent/50 hover:bg-accent/5 shrink-0 w-[70vw] md:w-auto snap-center ${profile === p.title ? "border-accent bg-accent/10" : ""}`}
-                    >
-                      <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-accent/15 mb-3 md:mb-5">
-                        <p.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
-                      </div>
-                      <h3 className="font-display text-sm md:text-lg font-bold text-foreground mb-0.5 md:mb-1">{p.title}</h3>
-                      <p className="text-[10px] md:text-sm text-muted-foreground">{p.description}</p>
-                    </button>
-                  ))}
-                </HorizontalScroll>
+                <div className="md:hidden max-w-md mx-auto">
+                  <label htmlFor="profile-select" className="sr-only">Choose your profile</label>
+                  <div className="relative">
+                    <UserRound className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-accent pointer-events-none" />
+                    <Select value={profile ?? ""} onValueChange={handleProfileSelect}>
+                      <SelectTrigger
+                        id="profile-select"
+                        className="h-14 rounded-2xl border border-accent/35 bg-gradient-to-br from-background via-background to-accent/5 pl-12 pr-4 text-sm font-medium shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all focus:ring-2 focus:ring-accent/35 data-[state=open]:border-accent data-[state=open]:shadow-[0_14px_36px_rgba(0,0,0,0.1)]"
+                      >
+                        <SelectValue placeholder="Select your profile" />
+                      </SelectTrigger>
+                      <SelectContent className="rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-xl p-1">
+                        {profiles.map((p) => (
+                          <SelectItem
+                            key={p.title}
+                            value={p.title}
+                            className="rounded-xl py-2.5 pl-9 pr-3 text-sm font-medium focus:bg-accent/15 focus:text-foreground"
+                          >
+                            {p.title}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {profile && (
+                    <div className="mt-3 rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-left">
+                      <p className="text-xs text-foreground font-medium">Selected: {profile}</p>
+                      {selectedProfileDescription && (
+                        <p className="mt-1 text-[11px] text-muted-foreground">{selectedProfileDescription}</p>
+                      )}
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => profile && setStep(2)}
+                    disabled={!profile}
+                    className="mt-4 w-full h-11 rounded-xl bg-accent text-accent-foreground text-sm font-semibold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Continue
+                  </button>
+                </div>
+
+                <div className="hidden md:block">
+                  <HorizontalScroll className="md:grid-cols-3">
+                    {profiles.map((p) => (
+                      <button
+                        key={p.title}
+                        onClick={() => { handleProfileSelect(p.title); setStep(2); }}
+                        className={`glass-card rounded-xl md:rounded-2xl p-4 md:p-8 text-left transition-all hover:border-accent/50 hover:bg-accent/5 shrink-0 w-[70vw] md:w-auto snap-center ${profile === p.title ? "border-accent bg-accent/10" : ""}`}
+                      >
+                        <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-accent/15 mb-3 md:mb-5">
+                          <p.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                        </div>
+                        <h3 className="font-display text-sm md:text-lg font-bold text-foreground mb-0.5 md:mb-1">{p.title}</h3>
+                        <p className="text-[10px] md:text-sm text-muted-foreground">{p.description}</p>
+                      </button>
+                    ))}
+                  </HorizontalScroll>
+                </div>
               </motion.div>
             )}
             {step === 2 && (
               <motion.div key="step2" initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: 30 }} transition={{ duration: 0.3 }}>
                 <button onClick={() => setStep(1)} className="mb-4 md:mb-8 inline-flex items-center gap-1.5 text-xs md:text-sm text-muted-foreground hover:text-foreground transition-colors"><ArrowLeft className="h-3.5 w-3.5 md:h-4 md:w-4" /> Back</button>
-                <HorizontalScroll className="md:grid-cols-4">
-                  {tripTypes.map((t) => (
-                    <button
-                      key={t.title}
-                      onClick={() => handleTripSelect(t.title)}
-                      className={`glass-card rounded-xl md:rounded-2xl p-4 md:p-6 text-center transition-all hover:border-accent/50 hover:bg-accent/5 shrink-0 w-[40vw] md:w-auto snap-center ${tripType === t.title ? "border-accent bg-accent/10" : ""}`}
-                    >
-                      <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-accent/15 mb-3 md:mb-5 mx-auto">
-                        <t.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
-                      </div>
-                      <h3 className="font-display text-xs md:text-base font-bold text-foreground mb-0.5 md:mb-1">{t.title}</h3>
-                      <p className="text-[9px] md:text-xs text-muted-foreground">{t.description}</p>
-                    </button>
-                  ))}
-                </HorizontalScroll>
+                <div className="md:hidden max-w-md mx-auto">
+                  <label htmlFor="trip-type-select" className="sr-only">Select your travel style</label>
+                  <div className="relative">
+                    <Compass className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-accent pointer-events-none" />
+                    <Select value={tripType ?? ""} onValueChange={handleTripSelect}>
+                      <SelectTrigger
+                        id="trip-type-select"
+                        className="h-14 rounded-2xl border border-accent/35 bg-gradient-to-br from-background via-background to-accent/5 pl-12 pr-4 text-sm font-medium shadow-[0_8px_30px_rgba(0,0,0,0.06)] transition-all focus:ring-2 focus:ring-accent/35 data-[state=open]:border-accent data-[state=open]:shadow-[0_14px_36px_rgba(0,0,0,0.1)]"
+                      >
+                        <SelectValue placeholder="Select your travel style" />
+                      </SelectTrigger>
+                      <SelectContent className="rounded-2xl border border-border/80 bg-background/95 backdrop-blur-md shadow-xl p-1">
+                        {tripTypes.map((t) => (
+                          <SelectItem
+                            key={t.title}
+                            value={t.title}
+                            className="rounded-xl py-2.5 pl-9 pr-3 text-sm font-medium focus:bg-accent/15 focus:text-foreground"
+                          >
+                            {t.title}
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  {tripType && (
+                    <div className="mt-3 rounded-xl border border-accent/20 bg-accent/5 px-4 py-3 text-left">
+                      <p className="text-xs text-foreground font-medium">Selected: {tripType}</p>
+                      {selectedTripDescription && (
+                        <p className="mt-1 text-[11px] text-muted-foreground">{selectedTripDescription}</p>
+                      )}
+                    </div>
+                  )}
+
+                  <button
+                    onClick={() => tripType && setStep(3)}
+                    disabled={!tripType}
+                    className="mt-4 w-full h-11 rounded-xl bg-accent text-accent-foreground text-sm font-semibold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                  >
+                    Continue
+                  </button>
+                </div>
+
+                <div className="hidden md:block">
+                  <HorizontalScroll className="md:grid-cols-4">
+                    {tripTypes.map((t) => (
+                      <button
+                        key={t.title}
+                        onClick={() => { handleTripSelect(t.title); setStep(3); }}
+                        className={`glass-card rounded-xl md:rounded-2xl p-4 md:p-6 text-center transition-all hover:border-accent/50 hover:bg-accent/5 shrink-0 w-[40vw] md:w-auto snap-center ${tripType === t.title ? "border-accent bg-accent/10" : ""}`}
+                      >
+                        <div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-xl bg-accent/15 mb-3 md:mb-5 mx-auto">
+                          <t.icon className="h-5 w-5 md:h-6 md:w-6 text-accent" />
+                        </div>
+                        <h3 className="font-display text-xs md:text-base font-bold text-foreground mb-0.5 md:mb-1">{t.title}</h3>
+                        <p className="text-[9px] md:text-xs text-muted-foreground">{t.description}</p>
+                      </button>
+                    ))}
+                  </HorizontalScroll>
+                </div>
               </motion.div>
             )}
             {step === 3 && (
@@ -142,7 +236,13 @@ const Book = () => {
           <p className="text-[10px] md:text-sm font-semibold uppercase tracking-wider text-accent mb-2 md:mb-4 text-center">Get In Touch</p>
           <h2 className="font-display text-xl md:text-4xl font-bold text-foreground text-center mb-1 md:mb-3">Plan Your Journey</h2>
           <p className="text-xs md:text-base text-muted-foreground text-center mb-6 md:mb-12 max-w-xl mx-auto">Our travel experts are ready to create your perfect Andaman experience</p>
-          <HorizontalScroll className="md:grid-cols-3">
+          <HorizontalScroll
+            className="md:grid-cols-3"
+            showEdgeFade={false}
+            mobilePeek
+            initialCenterIndex={1}
+            provokeSwipe
+          >
             {[
               { title: "Phone", lines: ["+91 86373 27297"] },
               { title: "Email", lines: ["contact@andamanluxe.com"] },
