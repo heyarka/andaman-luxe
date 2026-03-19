@@ -42,35 +42,47 @@ const Explore = () => {
       <Navbar />
 
       {/* Hero Header */}
-      <section className="pt-32 pb-16 px-6 text-center">
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-sm font-semibold uppercase tracking-wider text-accent mb-4"
-        >
-          Explore Andaman
-        </motion.p>
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.1 }}
-          className="font-display text-4xl md:text-6xl font-bold text-gradient-hero italic mb-6"
-        >
-          Everything You Need to Know
-        </motion.h1>
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
-          className="text-muted-foreground max-w-2xl mx-auto text-lg"
-        >
-          From pristine destinations to thrilling water sports and convenient ferry services – discover all that Andaman has to offer
-        </motion.p>
+      <section className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden px-6 text-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{ backgroundImage: "url('/Firefly.png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-slate-900/35 to-slate-950/55" />
+
+        <div className="relative z-10 max-w-5xl mx-auto pt-20 md:pt-24">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center rounded-full border border-white/25 bg-white/20 px-5 py-2 text-sm md:text-base font-semibold tracking-wide text-white backdrop-blur-md mb-6"
+          >
+            Explore Paradise
+          </motion.div>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className="font-display text-5xl sm:text-6xl md:text-8xl font-bold leading-[0.95] text-white mb-6"
+          >
+            Curated
+            <br />
+            <span className="text-sky-300">Adventures</span>
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="text-white/90 max-w-3xl mx-auto text-xl md:text-5 leading-relaxed"
+          >
+            From deep sea diving to sunset cruises, discover unforgettable experiences tailored just for you in the Andaman Islands.
+          </motion.p>
+        </div>
       </section>
 
       {/* Category Cards */}
-      <section className="px-4 md:px-6 pb-10 md:pb-16">
+      <section className="px-4 md:px-6 pt-8 md:pt-12 pb-10 md:pb-16">
         <div className="container mx-auto max-w-6xl grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-8">
           {categories.map((cat, i) => (
             <motion.div
@@ -133,13 +145,13 @@ const Explore = () => {
           <p className="text-muted-foreground mb-8 max-w-lg mx-auto">
             Now that you've explored what Andaman has to offer, let's find the perfect package tailored just for you
           </p>
-          <a
-            href="/book"
+          <Link
+            to="/book"
             className="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground btn-primary-glow transition-all hover:brightness-110"
           >
             Find Your Perfect Trip
             <ArrowRight className="h-4 w-4" />
-          </a>
+          </Link>
         </motion.div>
       </section>
 

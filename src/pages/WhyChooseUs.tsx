@@ -107,7 +107,7 @@ const WhyChooseUs = () => {
                 </a>
                 <a
                   href="/book"
-                  className="inline-flex items-center gap-1.5 md:gap-2 rounded-lg bg-accent text-accent-foreground px-3 py-2 md:px-6 md:py-3 text-[10px] md:text-sm font-semibold hover:brightness-110 transition-all"
+                  className="btn-frosted-blue inline-flex items-center gap-1.5 md:gap-2 rounded-lg px-3 py-2 md:px-6 md:py-3 text-[10px] md:text-sm font-semibold transition-all"
                 >
                   <Sparkles className="h-3 w-3 md:h-4 md:w-4" /> Get Best Quote
                 </a>

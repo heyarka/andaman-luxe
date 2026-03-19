@@ -95,12 +95,47 @@
     );
   }
 
-  .btn-primary-glow {
-    box-shadow: 0 4px 24px hsl(36, 100%, 50%, 0.35);
+  .btn-primary-glow,
+  .btn-frosted-blue {
+    background: linear-gradient(135deg, hsl(206 88% 54% / 0.76), hsl(223 84% 52% / 0.82)) !important;
+    border: 1px solid hsl(201 100% 88% / 0.72) !important;
+    color: hsl(0 0% 100%) !important;
+    text-shadow: 0 1px 2px hsl(220 60% 20% / 0.45);
+    backdrop-filter: blur(14px);
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.35),
+      inset 0 -1px 0 hsl(219 72% 33% / 0.35),
+      0 10px 24px hsl(214 90% 44% / 0.40);
   }
 
-  .btn-primary-glow:hover {
-    box-shadow: 0 8px 36px hsl(36, 100%, 50%, 0.5);
+  .btn-primary-glow:hover,
+  .btn-frosted-blue:hover {
+    background: linear-gradient(135deg, hsl(206 90% 58% / 0.86), hsl(223 86% 56% / 0.9)) !important;
+    border-color: hsl(201 100% 92% / 0.86) !important;
+    box-shadow:
+      inset 0 1px 0 hsl(0 0% 100% / 0.45),
+      inset 0 -1px 0 hsl(219 72% 30% / 0.42),
+      0 14px 30px hsl(214 90% 44% / 0.52);
+  }
+
+  .btn-primary-glow:disabled,
+  .btn-frosted-blue:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+  }
+
+  .btn-frosted-blue-soft {
+    background: linear-gradient(135deg, hsl(205 95% 69% / 0.28), hsl(218 92% 62% / 0.34)) !important;
+    border: 1px solid hsl(206 100% 80% / 0.62) !important;
+    color: hsl(214 78% 30%) !important;
+    backdrop-filter: blur(12px);
+    text-shadow: 0 1px 0 hsl(0 0% 100% / 0.55);
+  }
+
+  .btn-frosted-blue-soft:hover {
+    background: linear-gradient(135deg, hsl(205 95% 72% / 0.36), hsl(218 92% 65% / 0.44)) !important;
+    border-color: hsl(206 100% 86% / 0.82) !important;
+    color: hsl(214 82% 24%) !important;
   }
 
   .btn-outline-light {

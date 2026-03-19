@@ -68,15 +68,21 @@ const Contact = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-28 pb-12 px-6 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-accent border border-accent/30 rounded-full px-4 py-1.5 mb-4">
+      <section className="relative pt-28 pb-12 px-6 text-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/crew.png')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/40 to-slate-900/55" />
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
+          <span className="inline-block text-sm font-semibold uppercase tracking-wider text-white border border-white/45 rounded-full px-4 py-1.5 mb-4 backdrop-blur-sm bg-white/10">
             Get In Touch
           </span>
-          <h1 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-3">
-            Plan Your <span className="text-gradient-hero italic">Journey</span>
+          <h1 className="font-display text-4xl md:text-5xl font-bold text-white mb-3 drop-shadow-sm">
+            Plan Your <span className="italic text-sky-200">Journey</span>
           </h1>
-          <p className="text-muted-foreground max-w-xl mx-auto">
+          <p className="text-white/90 max-w-xl mx-auto">
             Our travel experts are ready to create your perfect Andaman experience
           </p>
         </motion.div>
@@ -142,7 +148,7 @@ const Contact = () => {
                   <label className="text-sm font-semibold text-foreground mb-1.5 block">Message</label>
                   <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your dream vacation..." maxLength={1000} rows={4} className="w-full rounded-lg border border-foreground/10 bg-background px-4 py-3 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-accent transition-colors resize-none" />
                 </div>
-                <button type="submit" disabled={sending} className="w-full rounded-lg bg-accent text-accent-foreground py-3 text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2 disabled:opacity-50">
+                <button type="submit" disabled={sending} className="btn-frosted-blue w-full rounded-lg py-3 text-sm font-semibold transition-all flex items-center justify-center gap-2 disabled:opacity-50">
                   <Send className="h-4 w-4" />
                   {sending ? "Sending..." : "Send Message"}
                 </button>

@@ -111,15 +111,21 @@ const CalculatorPage = () => {
       <Navbar />
 
       {/* Hero */}
-      <section className="pt-20 md:pt-28 pb-4 md:pb-8 px-4 md:px-6 text-center">
-        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
-          <div className="flex h-10 w-10 md:h-16 md:w-16 items-center justify-center rounded-full bg-accent/15 mx-auto mb-2 md:mb-4">
-            <Calculator className="h-5 w-5 md:h-8 md:w-8 text-accent" />
+      <section className="relative pt-20 md:pt-28 pb-8 md:pb-12 px-4 md:px-6 text-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{ backgroundImage: "url('/Firefly1.jpg')" }}
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900/45 via-slate-900/40 to-slate-900/55" />
+
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="relative z-10">
+          <div className="flex h-10 w-10 md:h-16 md:w-16 items-center justify-center rounded-full bg-white/25 backdrop-blur-sm border border-white/30 mx-auto mb-2 md:mb-4">
+            <Calculator className="h-5 w-5 md:h-8 md:w-8 text-white" />
           </div>
-          <h1 className="font-display text-xl md:text-5xl font-bold text-foreground mb-1 md:mb-2">
-            Plan Your <span className="text-gradient-hero italic">Dream Escape</span>
+          <h1 className="font-display text-xl md:text-5xl font-bold text-white mb-1 md:mb-2 drop-shadow-sm">
+            Plan Your <span className="italic text-sky-200">Dream Escape</span>
           </h1>
-          <p className="text-[10px] md:text-base text-muted-foreground max-w-xl mx-auto">
+          <p className="text-[10px] md:text-base text-white/90 max-w-xl mx-auto">
             Calculate your perfect Andaman getaway with our interactive cost estimator.
           </p>
         </motion.div>

@@ -249,7 +249,7 @@ const HeroSection = () => {
         >
           <Link
             to="/book"
-            className="inline-flex items-center justify-center gap-2.5 rounded-full bg-accent px-8 py-3.5 text-sm font-semibold text-accent-foreground btn-primary-glow transition-all duration-300 hover:brightness-110 font-body"
+            className="btn-frosted-blue inline-flex items-center justify-center gap-2.5 rounded-full px-8 py-3.5 text-sm font-semibold transition-all duration-300 font-body"
           >
             Plan Your Trip
             <ArrowRight className="h-4 w-4" />

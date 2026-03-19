@@ -154,14 +154,14 @@ export const PackageCustomizationModal = ({ open, selectedPackage, onClose }: Pa
                 <button
                   type="button"
                   onClick={handleRequestQuote}
-                  className="flex-1 rounded-lg bg-primary text-primary-foreground font-semibold py-3 hover:bg-primary/90 transition-colors"
+                  className="btn-frosted-blue flex-1 rounded-lg font-semibold py-3 transition-colors"
                 >
                   Request Custom Quote
                 </button>
                 <button
                   type="button"
                   onClick={onClose}
-                  className="flex-1 rounded-lg border border-primary/30 text-primary font-semibold py-3 hover:bg-primary/5 transition-colors"
+                  className="btn-frosted-blue-soft flex-1 rounded-lg font-semibold py-3 transition-colors"
                 >
                   Close
                 </button>

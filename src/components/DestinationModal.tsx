@@ -120,12 +120,12 @@ export const DestinationModal = ({ destination, onClose, onViewPackages }: Desti
 
                 {/* CTA */}
                 <div className="flex gap-4 pt-4">
-                  <button onClick={handleBookNowClick} className="flex-1 rounded-lg bg-primary text-primary-foreground font-semibold py-3 hover:bg-primary/90 transition-colors">
+                  <button onClick={handleBookNowClick} className="btn-frosted-blue flex-1 rounded-lg font-semibold py-3 transition-colors">
                     Book Now
                   </button>
                   <button
                     onClick={onClose}
-                    className="flex-1 rounded-lg border border-primary/30 text-primary font-semibold py-3 hover:bg-primary/5 transition-colors"
+                    className="btn-frosted-blue-soft flex-1 rounded-lg font-semibold py-3 transition-colors"
                   >
                     Close
                   </button>
@@ -147,14 +147,14 @@ export const DestinationModal = ({ destination, onClose, onViewPackages }: Desti
                   <button
                     type="button"
                     onClick={handleViewPackages}
-                    className="flex-1 rounded-lg bg-primary text-primary-foreground font-semibold py-3 hover:bg-primary/90 transition-colors"
+                    className="btn-frosted-blue flex-1 rounded-lg font-semibold py-3 transition-colors"
                   >
                     View Packages
                   </button>
                   <button
                     type="button"
                     onClick={() => setShowBookingNotice(false)}
-                    className="flex-1 rounded-lg border border-primary/30 text-primary font-semibold py-3 hover:bg-primary/5 transition-colors"
+                    className="btn-frosted-blue-soft flex-1 rounded-lg font-semibold py-3 transition-colors"
                   >
                     Close
                   </button>

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
-import { CheckCircle2, X } from "lucide-react";
+import { CheckCircle2, X, AlertCircle } from "lucide-react";
 import { getPackageBySlug } from "@/data/packageDetails";
 
 type SelectedPackage = {
@@ -53,164 +53,174 @@ export const PackageDetailsModal = ({
 
   return (
     <Dialog open={open} onOpenChange={handleClose}>
-      <DialogContent className="sm:max-w-2xl rounded-2xl border-foreground/10 bg-card p-0 max-h-[90vh] overflow-y-auto">
-        <div className="relative p-6 md:p-8 pb-8 md:pb-10">
-          <button
-            onClick={handleClose}
-            className="absolute top-4 right-4 rounded-full p-2 hover:bg-muted transition-colors"
-          >
-            <X className="h-5 w-5 text-foreground" />
-          </button>
+      <DialogContent className="w-[98vw] max-w-lg sm:max-w-2xl rounded-3xl sm:rounded-2xl border-foreground/10 bg-card p-0 h-[95vh] max-h-[95vh] overflow-hidden flex flex-col">
+        <div className="flex flex-col h-full w-full">
+          <div className="relative p-2.5 sm:p-4 md:p-6 pb-2 sm:pb-3 md:pb-4 border-b border-foreground/5">
+            <button
+              onClick={handleClose}
+              className="absolute top-2.5 right-2.5 sm:top-4 sm:right-4 rounded-full p-1.5 hover:bg-foreground/10 transition-colors z-20 flex items-center justify-center"
+              aria-label="Close modal"
+            >
+              <X className="h-5 w-5 text-foreground" />
+            </button>
 
-          {!bookingConfirmed ? (
-            <>
-              {selectedPackage && packageDetails ? (
-                <div className="space-y-6">
-                  <div>
-                    <DialogTitle className="font-display text-3xl font-bold text-foreground mb-3">
-                      {selectedPackage.name}
-                    </DialogTitle>
-                    <p className="text-sm text-muted-foreground">
-                      Duration: {selectedPackage.duration}
-                    </p>
-                    <p className="text-2xl font-bold text-accent mt-2">
-                      {getPrice(selectedPackage)}
-                      <span className="text-sm font-normal text-muted-foreground">
-                        {" "}
-                        per person
-                      </span>
-                    </p>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">Package Highlights</h3>
-                    <ul className="space-y-1 text-sm text-muted-foreground">
-                      {packageDetails.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2">
-                          <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-accent" />
-                          {feature}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-3">Detailed Itinerary</h3>
-                    <div className="flex gap-2 overflow-x-auto pb-1">
-                      {packageDetails.itinerary.map((_, i) => (
-                        <button
-                          key={i}
-                          onClick={() => setActiveDay(i)}
-                          className={`shrink-0 rounded-md px-3 py-1.5 text-xs font-semibold transition-colors ${
-                            activeDay === i
-                              ? "bg-accent text-accent-foreground"
-                              : "border border-foreground/10 text-muted-foreground hover:border-accent/40"
-                          }`}
-                        >
-                          Day {i + 1}
-                        </button>
-                      ))}
-                    </div>
-                    <div className="mt-3 rounded-lg border border-foreground/10 bg-background/70 p-3">
-                      <p className="font-semibold text-foreground">{packageDetails.itinerary[activeDay]?.title}</p>
-                      <ul className="mt-2 space-y-1 text-sm text-muted-foreground">
-                        {packageDetails.itinerary[activeDay]?.activities.map((activity, index) => (
-                          <li key={index} className="flex items-start gap-2">
-                            <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
-                            {activity}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="grid gap-3 md:grid-cols-2">
-                    <div className="rounded-xl border border-foreground/10 bg-card/70 p-4">
-                      <div className="mb-4 flex items-center gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-emerald-100">
-                          <CheckCircle2 className="h-5 w-5 text-emerald-600" />
-                        </div>
-                        <h3 className="font-display text-2xl font-bold text-foreground">Included</h3>
-                      </div>
-                      <ul className="space-y-2.5">
-                        {packageDetails.included.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                            <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-emerald-500" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div className="rounded-xl border border-foreground/10 bg-card/70 p-4">
-                      <div className="mb-4 flex items-center gap-3">
-                        <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-red-100">
-                          <X className="h-5 w-5 text-red-500" />
-                        </div>
-                        <h3 className="font-display text-2xl font-bold text-foreground">Not Included</h3>
-                      </div>
-                      <ul className="space-y-2.5">
-                        {packageDetails.notIncluded.map((item) => (
-                          <li key={item} className="flex items-start gap-2.5 text-sm text-muted-foreground">
-                            <X className="mt-0.5 h-4 w-4 shrink-0 text-red-500" />
-                            {item}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row gap-3 pt-4">
-                    <button
-                      onClick={handleCustomizeClick}
-                      className="flex-1 rounded-lg border border-accent/30 text-accent font-semibold py-3 hover:bg-accent/5 transition-colors"
-                    >
-                      Customize This Package
-                    </button>
-                    <button
-                      onClick={handleBookClick}
-                      className="flex-1 rounded-lg bg-accent text-accent-foreground font-semibold py-3 hover:bg-accent/90 transition-colors"
-                    >
-                      Book This Package
-                    </button>
-                  </div>
+            {selectedPackage && (
+              <div className="pr-8">
+                <DialogTitle className="font-display text-lg sm:text-xl md:text-2xl font-bold text-foreground leading-tight">
+                  {selectedPackage.name}
+                </DialogTitle>
+                <div className="flex items-baseline gap-2 mt-0.5 sm:mt-1">
+                  <p className="text-lg sm:text-xl font-bold text-accent">
+                    {getPrice(selectedPackage)}
+                  </p>
+                  <p className="text-xs text-muted-foreground">
+                    {selectedPackage.duration}
+                  </p>
                 </div>
-              ) : (
-                <p className="text-sm text-muted-foreground">
-                  Package details are unavailable.
-                </p>
-              )}
-            </>
-          ) : (
-            <div className="text-center py-8">
-              <div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-green-500/15 mx-auto mb-4">
-                <svg
-                  className="h-6 w-6 md:h-8 md:w-8 text-green-500"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                    clipRule="evenodd"
-                  />
-                </svg>
               </div>
-              <h3 className="font-display text-2xl font-bold text-foreground mb-2">
-                Booking Confirmed!
-              </h3>
-              <p className="text-sm text-muted-foreground leading-relaxed">
-                Our team will contact you shortly to confirm your booking and
-                share complete details.
-              </p>
+            )}
+          </div>
+
+          <div className="overflow-y-auto flex-1 p-2.5 sm:p-4 min-h-0">
+            {!bookingConfirmed ? (
+              <>
+                {selectedPackage && packageDetails ? (
+                  <div className="space-y-2 sm:space-y-3">
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Package Highlights</h3>
+                      <ul className="space-y-0.5 text-xs text-muted-foreground">
+                        {packageDetails.features.map((feature) => (
+                          <li key={feature} className="flex items-start gap-1.5">
+                            <CheckCircle2 className="mt-0.5 h-3 w-3 shrink-0 text-accent flex-shrink-0 mt-0.5" />
+                            <span>{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div>
+                      <h3 className="font-semibold text-foreground mb-1 text-xs sm:text-sm">Itinerary</h3>
+                      <div className="flex gap-1 overflow-x-auto pb-1">
+                        {packageDetails.itinerary.map((_, i) => (
+                          <button
+                            key={i}
+                            onClick={() => setActiveDay(i)}
+                            className={`shrink-0 rounded px-1.5 py-0.5 text-xs transition-colors whitespace-nowrap font-semibold ${
+                              activeDay === i
+                                ? "bg-accent text-accent-foreground"
+                                : "border border-foreground/10 text-muted-foreground hover:border-accent/40"
+                            }`}
+                          >
+                            Day {i + 1}
+                          </button>
+                        ))}
+                      </div>
+                      <div className="mt-1 rounded-lg border border-foreground/10 bg-background/70 p-2">
+                        <p className="font-semibold text-foreground text-xs">{packageDetails.itinerary[activeDay]?.title}</p>
+                        <ul className="mt-1 space-y-0.5 text-xs text-muted-foreground">
+                          {packageDetails.itinerary[activeDay]?.activities.map((activity, index) => (
+                            <li key={index} className="flex items-start gap-1.5">
+                              <span className="mt-1 h-1 w-1 shrink-0 rounded-full bg-accent flex-shrink-0" />
+                              <span>{activity}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+
+                    <div className="grid gap-1.5 grid-cols-2">
+                      <div className="rounded-lg border border-foreground/10 bg-card/70 p-2">
+                        <div className="mb-1 flex items-center gap-1">
+                          <div className="flex h-5 w-5 items-center justify-center rounded-lg bg-emerald-100 shrink-0">
+                            <CheckCircle2 className="h-3 w-3 text-emerald-600" />
+                          </div>
+                          <h3 className="font-semibold text-foreground text-xs">Included</h3>
+                        </div>
+                        <ul className="space-y-0.5">
+                          {packageDetails.included.map((item) => (
+                            <li key={item} className="flex items-start gap-1 text-xs text-muted-foreground">
+                              <CheckCircle2 className="mt-0.5 h-2 w-2 shrink-0 text-emerald-500 flex-shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                      <div className="rounded-lg border border-foreground/10 bg-card/70 p-2">
+                        <div className="mb-1 flex items-center gap-1">
+                          <div className="flex h-5 w-5 items-center justify-center rounded-lg bg-red-100 shrink-0">
+                            <AlertCircle className="h-3 w-3 text-red-500" />
+                          </div>
+                          <h3 className="font-semibold text-foreground text-xs">Not Included</h3>
+                        </div>
+                        <ul className="space-y-0.5">
+                          {packageDetails.notIncluded.map((item) => (
+                            <li key={item} className="flex items-start gap-1 text-xs text-muted-foreground">
+                              <AlertCircle className="mt-0.5 h-2 w-2 shrink-0 text-red-500 flex-shrink-0 mt-0.5" />
+                              <span>{item}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ) : (
+                  <p className="text-xs text-muted-foreground">
+                    Package details are unavailable.
+                  </p>
+                )}
+              </>
+            ) : (
+              <div className="text-center py-3">
+                <div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/15 mx-auto mb-2">
+                  <svg
+                    className="h-5 w-5 text-green-500"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                </div>
+                <h3 className="font-display text-base sm:text-lg font-bold text-foreground mb-1">
+                  Booking Confirmed!
+                </h3>
+                <p className="text-xs text-muted-foreground leading-tight">
+                  Our team will contact you shortly.
+                </p>
+              </div>
+            )}
+          </div>
+
+          <div className="border-t border-foreground/5 p-2.5 sm:p-4 bg-card shadow-lg">
+            {!bookingConfirmed && (
+              <div className="flex flex-col gap-1.5 w-full">
+                <button
+                  onClick={handleCustomizeClick}
+                  className="btn-frosted-blue-soft w-full rounded-lg font-semibold py-2 sm:py-2.5 text-xs sm:text-sm active:scale-95 transition-all"
+                >
+                  Customize
+                </button>
+                <button
+                  onClick={handleBookClick}
+                  className="btn-frosted-blue w-full rounded-lg font-semibold py-2 sm:py-2.5 text-xs sm:text-sm active:scale-95 transition-all shadow-md"
+                >
+                  Book Now
+                </button>
+              </div>
+            )}
+            {bookingConfirmed && (
               <button
                 onClick={handleClose}
-                className="mt-6 rounded-lg bg-accent text-accent-foreground font-semibold py-3 px-6 hover:bg-accent/90 transition-colors"
+                className="btn-frosted-blue w-full rounded-lg font-semibold py-2 sm:py-2.5 text-xs sm:text-sm transition-colors"
               >
                 Close
               </button>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </DialogContent>
     </Dialog>

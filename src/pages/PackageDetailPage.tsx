@@ -108,7 +108,7 @@ const PackageDetailPage = () => {
                 <p className="text-sm font-medium text-foreground/85">Starting from</p>
                 <p className="text-3xl md:text-4xl font-bold text-accent">{pkg.price}</p>
                 <p className="text-sm text-foreground/75">per person</p>
-                <button onClick={() => setShowBooking(true)} className="mt-3 bg-accent text-accent-foreground px-8 py-3 rounded-lg font-semibold hover:brightness-110 transition-all text-sm">
+                <button onClick={() => setShowBooking(true)} className="btn-frosted-blue mt-3 px-8 py-3 rounded-lg font-semibold transition-all text-sm">
                   Book This Package
                 </button>
               </div>
@@ -332,7 +332,7 @@ const PackageDetailPage = () => {
             >
               Back
             </button>
-            <button onClick={() => setShowBooking(true)} className="rounded-lg bg-accent text-accent-foreground px-6 py-3 text-sm font-semibold hover:brightness-110 transition-all">
+            <button onClick={() => setShowBooking(true)} className="btn-frosted-blue rounded-lg px-6 py-3 text-sm font-semibold transition-all">
               Book Now
             </button>
           </div>
@@ -354,7 +354,7 @@ const PackageDetailPage = () => {
               </DialogDescription>
             </DialogHeader>
             <div className="space-y-2 md:space-y-3">
-              <button onClick={handleGoToContact} className="w-full rounded-xl bg-accent text-accent-foreground py-3 text-xs md:text-sm font-semibold hover:brightness-110 transition-all flex items-center justify-center gap-2">
+              <button onClick={handleGoToContact} className="btn-frosted-blue w-full rounded-xl py-3 text-xs md:text-sm font-semibold transition-all flex items-center justify-center gap-2">
                 Fill Out Contact Form <ArrowRight className="h-3.5 w-3.5 md:h-4 md:w-4" />
               </button>
               <div className="flex items-center gap-3 my-1">

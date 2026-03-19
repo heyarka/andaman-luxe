@@ -107,7 +107,10 @@ const Book = () => {
                             value={p.title}
                             className="rounded-xl py-2.5 pl-9 pr-3 text-sm font-medium focus:bg-accent/15 focus:text-foreground"
                           >
-                            {p.title}
+                            <div className="flex items-center gap-3">
+                              <p.icon className="h-4 w-4 text-accent flex-shrink-0" />
+                              {p.title}
+                            </div>
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -126,7 +129,7 @@ const Book = () => {
                   <button
                     onClick={() => profile && setStep(2)}
                     disabled={!profile}
-                    className="mt-4 w-full h-11 rounded-xl bg-accent text-accent-foreground text-sm font-semibold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-frosted-blue mt-4 w-full h-11 rounded-xl text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Continue
                   </button>
@@ -172,7 +175,10 @@ const Book = () => {
                             value={t.title}
                             className="rounded-xl py-2.5 pl-9 pr-3 text-sm font-medium focus:bg-accent/15 focus:text-foreground"
                           >
-                            {t.title}
+                            <div className="flex items-center gap-3">
+                              <t.icon className="h-4 w-4 text-accent flex-shrink-0" />
+                              {t.title}
+                            </div>
                           </SelectItem>
                         ))}
                       </SelectContent>
@@ -191,7 +197,7 @@ const Book = () => {
                   <button
                     onClick={() => tripType && setStep(3)}
                     disabled={!tripType}
-                    className="mt-4 w-full h-11 rounded-xl bg-accent text-accent-foreground text-sm font-semibold transition-all hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-frosted-blue mt-4 w-full h-11 rounded-xl text-sm font-semibold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     Continue
                   </button>
